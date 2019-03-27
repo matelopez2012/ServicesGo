@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ServicesGo.Models
 { 
-public class Employee : Person
+public class Empleado : Persona
 
 {
         public Employee(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
