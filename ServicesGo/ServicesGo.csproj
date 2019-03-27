@@ -153,6 +153,9 @@
     </Compile>
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\ServiceProvider.cs" />
+    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Class1.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
