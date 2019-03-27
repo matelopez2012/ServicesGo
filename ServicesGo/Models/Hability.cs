@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    public class Habilidad
+    public class Hability
     {
     }
 }
