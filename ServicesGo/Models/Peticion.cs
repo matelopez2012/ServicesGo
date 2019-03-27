@@ -5,10 +5,7 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    public class Profession
+    public class Peticion
     {
-
-        
-
     }
 }

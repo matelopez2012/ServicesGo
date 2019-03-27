@@ -5,14 +5,14 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    public class Account
+    public class Cuenta
     {
         private string nombreUsuario;
         private string contrasena;
         private string rol;
         private bool aprobada;
 
-        public Account(String nombreUsuario, String contrasena, String rol)
+        public Cuenta(String nombreUsuario, String contrasena, String rol)
         {
             this.nombreUsuario = nombreUsuario;
             this.contrasena = contrasena;
