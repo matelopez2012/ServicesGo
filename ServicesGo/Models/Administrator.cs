@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    public class Administrator : Person
+    public class Administrador : Personna
     {
         public override string nombreUsuario { get; set; }
         public override string nombre { get; set; }
