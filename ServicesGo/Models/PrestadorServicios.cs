@@ -7,10 +7,10 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    public class ServiceProvider : Person
+    public class PrestadorServicios : Person
 
     {
-        public ServiceProvider(string nombreUsuario, string nombre, string apellidos, string cedula, 
+        public PrestadorServicios(string nombreUsuario, string nombre, string apellidos, string cedula, 
             string direccion, string telefono, string correoElectronico, string foto, List<Habilidad> habilidades,
             string nombreDocArl,string rutaArl ,string nombreDocSegSocial, string rutaSegSocial , int estiloPresentacion,
             int formatoHV, bool modificado, DateTime fechaModificacion)

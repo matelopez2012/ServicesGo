@@ -10,7 +10,7 @@ namespace ServicesGo.Models
 public class Empleado : Persona
 
 {
-        public Employee(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
+        public Empleado(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             this.nombreUsuario = nombreUsuario;
             this.nombre = nombre;
