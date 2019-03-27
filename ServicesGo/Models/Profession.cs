@@ -7,5 +7,8 @@ namespace ServicesGo.Models
 {
     public class Profession
     {
+
+        
+
     }
 }
