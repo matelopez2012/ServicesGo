@@ -7,5 +7,6 @@ namespace ServicesGo.Models
 {
     public class Habilidad
     {
+        private
     }
 }

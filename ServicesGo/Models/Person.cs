@@ -16,7 +16,8 @@ namespace ServicesGo.Models
         public virtual string correoElectronico { get; set; }
         public virtual string foto { get; set; }
 
-        
+
+
     }
 
 }

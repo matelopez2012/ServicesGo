@@ -20,6 +20,8 @@ public class Empleado : Persona
             this.telefono = telefono;
             this.correoElectronico = correoElectronico;
             this.foto = foto;
+
+            
         }
 
         private override string nombreUsuario { get; set; }
