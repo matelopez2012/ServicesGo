@@ -156,7 +156,7 @@
     <Compile Include="Models\PrestadorServicios.cs" />
     <Compile Include="Models\Administrator.cs" />
     <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
