@@ -7,10 +7,10 @@ namespace ServicesGo.Models
 {
     public class Cuenta
     {
-        private string nombreUsuario;
-        private string contrasena;
-        private string rol;
-        private bool aprobada;
+        private string nombreUsuario { get; set; }
+        private string contrasena { get; set; }
+        private string rol { get; set; }
+        private bool aprobada { get; set; }
 
         public Cuenta(String nombreUsuario, String contrasena, String rol)
         {
@@ -18,35 +18,6 @@ namespace ServicesGo.Models
             this.contrasena = contrasena;
             this.rol = rol;
             this.aprobada = false;
-        }
-
-        /*Gets*/
-
-        public string getNombreUsuario()
-        {
-            return this.nombreUsuario;
-        }
-
-        public string getContrasena()
-        {
-            return this.contrasena;
-        }
-
-        public string getRol()
-        {
-            return this.rol;
-        }
-
-        public bool getAprobada()
-        {
-            return this.aprobada;
-        }
-
-        /*Sets*/
-
-        public void setAprobada(bool aprobada)
-        {
-            this.aprobada = aprobada;
         }
     }
 }

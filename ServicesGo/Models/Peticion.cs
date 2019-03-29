@@ -7,11 +7,11 @@ namespace ServicesGo.Models
 {
     public class Peticion
     {
-        private string nombreCuenta;
-        private string auditor;
-        private string observacion;
-        private DateTime fechaMod;
-        private bool resuelta;
+        private string nombreCuenta { get; set; }
+        private string auditor { get; set; }
+        private string observacion { get; set; }
+        private DateTime fechaMod { get; set; }
+        private bool resuelta { get; set; }
 
         public Peticion(string nombreCuenta, string auditor, string observacion)
         {
@@ -19,20 +19,6 @@ namespace ServicesGo.Models
             this.auditor = auditor;
             this.observacion = observacion;
             this.fechaMod = DateTime.Today;
-        }
-
-        /*Gets*/
-
-        public DateTime getFechaMod()
-        {
-            return this.fechaMod;
-        }
-
-        /*Sets*/
-
-        public void setResuelta(bool resuelta)
-        {
-            this.resuelta = resuelta;
         }
     }
 }
