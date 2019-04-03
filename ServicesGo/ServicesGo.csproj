@@ -155,7 +155,7 @@
     <Compile Include="Models\Empleado.cs" />
     <Compile Include="Models\Habilidad.cs" />
     <Compile Include="Models\PrestadorServicios.cs" />
-    <Compile Include="Models\Administrator.cs" />
+    <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Class1.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Usuario.cs" />

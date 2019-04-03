@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -46,7 +48,7 @@ namespace ServicesGo.Models
         }
 
 
-        public string NombreUsuario
+        public string nombreUsuario
         {
             get => _nombreUsuario;
             set => _nombreUsuario = value;

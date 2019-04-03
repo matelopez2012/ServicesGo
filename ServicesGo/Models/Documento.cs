@@ -9,7 +9,7 @@ namespace ServicesGo.Models
     {
         private string nombreDoc { get; set; }
         private string ruta { get; set; }
-        private datatime fecha { get; set; }
+        private DateTime fecha { get; set; }
 
         
         public Documento(string nombreDoc, string ruta)
