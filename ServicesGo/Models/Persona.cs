@@ -7,16 +7,30 @@ namespace ServicesGo.Models
 {
     public class Persona
     {
-
-
-
-        protected string _nombreUsuario;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(25)]
+        public string _nombreUsuario;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(25)]
         protected string _nombre;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(50)]
         protected string _apellidos;
+        [Key]
+        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(25)]
         protected string _cedula;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(35)]
         protected string _direccion;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(15)]
         protected string _telefono;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(35)]
         protected string _correoElectronico;
+        [Required(ErrorMessage = "El campo {0} es requerido")]
         protected string _foto;
 
         public Persona(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
@@ -32,10 +46,10 @@ namespace ServicesGo.Models
         }
 
 
-        public string nombreUsuario
+        public string NombreUsuario
         {
-            get { return _nombreUsuario; }
-            set { _nombreUsuario = value; }
+            get => _nombreUsuario;
+            set => _nombreUsuario = value;
         }
 
         public string nombre
@@ -80,10 +94,6 @@ namespace ServicesGo.Models
             get { return _foto; }
             set { _foto = value; }
         }
-
-
-
-
     }
 
 }
