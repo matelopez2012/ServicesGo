@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    public class Usuario : Person
+    public class Usuario : Persona
     {
 
         public Usuario(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion,

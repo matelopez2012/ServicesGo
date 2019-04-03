@@ -15,7 +15,7 @@ namespace ServicesGo.Models
         public Habilidad(string nombre, int experiencia, string conocimientosEpecificos)
         {
             nombre = nombre;
-            experiencia experiencia;
+            experiencia = experiencia;
             conocimientosEspecificos = conocimientosEspecificos;
         }
 
