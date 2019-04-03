@@ -23,7 +23,10 @@ namespace ServicesGo.Models
             string direccion, string telefono, string correoElectronico, string foto, List<Habilidad> habilidades,
             string nombreDocArl,string rutaArl ,string nombreDocSegSocial, string rutaSegSocial , int estiloPresentacion,
             int formatoHV, bool modificado, DateTime fechaModificacion)
-            : base(nombreUsuario, nombre, apellidos,  cedula, direccion,  telefono,  correoElectronico,  foto)
+            : base(nombreUsuario, nombre, apellidos,  cedula, direccion,  telefono,  correoElectronico, foto)
+   
+
+        
 
         {
             

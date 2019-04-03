@@ -8,6 +8,12 @@ namespace ServicesGo.Models
     public class Usuario : Person
     {
 
-       
+        public Usuario(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion,
+            string telefono, string correoElectronico, string foto)
+            : base (nombreUsuario, nombre, apellidos, cedula, direccion, telefono, correoElectronico, foto)
+        {
+
+        }
+      
     }
 }
