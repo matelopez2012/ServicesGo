@@ -23,5 +23,32 @@ namespace ServicesGo.Models
         {
             Documento documento = new Documento(nombreDocumento, ruta);
         }
+
+
+        public Documento buscarDocumento(String nombre)
+        {
+
+            Documento documento = documentosSoporte.Find(x => x.NombreDoc.Contains(nombre));
+
+            return documento != null ? documento : null;
+
+        }
+
+
+        public void añadirDocumento(string nombreDoc, string ruta)
+        {
+            documentosSoporte.Add(new Documento(nombreDoc, ruta));
+        }
+
+
+        public void eliminarDocumento(string nombreDoc)
+        {
+            Documento documento = buscarDocumento(nombre);
+            this.documentosSoporte.Remove(documento);
+
+        }
+
+
+
     }
 }

@@ -7,16 +7,23 @@ namespace ServicesGo.Models
 {
     public class Documento
     {
-        private string nombreDoc { get; set; }
-        private string ruta { get; set; }
-        private DateTime fecha { get; set; }
+        private string nombreDoc;
+        private string ruta; 
+        private DateTime fecha; 
 
-        
         public Documento(string nombreDoc, string ruta)
         {
             nombreDoc = nombreDoc;
             ruta = ruta;
         }
+
+
+        public string NombreDoc { get; set; }
+        
+        public string Rruta { get; set; }
+
+        public DateTime Fecha { get; set; }
+        
 
     }
 }
