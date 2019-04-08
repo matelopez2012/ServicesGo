@@ -5,23 +5,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
+namespace ServicesGo.Business_Layer.Controllers.ControladorasUsuario
 {
-    public static class ControladorMostrarHabilidad
+    public class ControladorMostrarUsuario
     {
 
         private static HomeServicesContext db = new HomeServicesContext();
 
 
 
-        public static Habilidad mostrarHabilidad(int id)
+        public static Usuario mostrarUsuario(int id)
         {
 
-            Habilidad habilidad = db.Habilidades.Find(id);
+            Usuario usuario = db.Usuarios.Find(id);
 
-            if(habilidad != null)
+            if (usuario != null)
             {
-                return habilidad;
+                return usuario;
             }
 
             else

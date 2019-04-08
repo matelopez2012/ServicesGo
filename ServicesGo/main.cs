@@ -13,7 +13,7 @@ namespace ServicesGo
 
         public Main()
         {
-            ControladorActualizarHabilidad.actualizarHabiliad(1, "act", 1, "act");
+            ControladorMostrarHabilidad.mostrarHabilidad(1);
           
             Console.WriteLine(34);
         }

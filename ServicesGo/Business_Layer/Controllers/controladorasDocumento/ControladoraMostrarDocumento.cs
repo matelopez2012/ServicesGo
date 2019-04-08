@@ -5,23 +5,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
+namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
 {
-    public static class ControladorMostrarHabilidad
+    public class ControladoraMostrarDocumento
     {
-
         private static HomeServicesContext db = new HomeServicesContext();
 
 
-
-        public static Habilidad mostrarHabilidad(int id)
+        public static Documento mostrarDocumento(int id)
         {
 
-            Habilidad habilidad = db.Habilidades.Find(id);
+            Documento documento = db.Documentos.Find(id);
 
-            if(habilidad != null)
+            if (documento != null)
             {
-                return habilidad;
+                return documento;
             }
 
             else
@@ -29,5 +27,6 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
                 return null;
             }
         }
+
     }
 }
