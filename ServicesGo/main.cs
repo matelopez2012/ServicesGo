@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ServicesGo.Controllers.BussinesLayer.ControladorasHabilidad;
+using ServicesGo.Business_Layer.Controllers.ControladorasHabilidad;
 
 namespace ServicesGo
 {
@@ -12,7 +13,8 @@ namespace ServicesGo
 
         public Main()
         {
-            ControladorCrearHabilidad.crearHabilidad("26", 6, "26");
+            ControladorActualizarHabilidad.actualizarHabiliad(1, "act", 1, "act");
+          
             Console.WriteLine(34);
         }
        

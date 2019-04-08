@@ -155,7 +155,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
     <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
