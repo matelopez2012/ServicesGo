@@ -5,6 +5,7 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
+    [Table("Cuenta")]
     public class Cuenta
     {
         public string nombreUsuario { get; set; }
@@ -12,7 +13,7 @@ namespace ServicesGo.Models
         public string rol { get; set; }
         public bool aprobada { get; set; }
 
-        public Cuenta(String nombreUsuario, String contrasena, String rol)
+        public Cuenta(string nombreUsuario, string contrasena, string rol)
         {
             this.nombreUsuario = nombreUsuario;
             this.contrasena = contrasena;

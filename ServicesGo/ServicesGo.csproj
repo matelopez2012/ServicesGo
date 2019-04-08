@@ -158,9 +158,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Cuenta.cs" />
-    <Compile Include="Models\Profesion.cs" />
-    <Compile Include="Models\Peticion.cs" />
+    <Compile Include="Business_Layer\Models\Cuenta.cs" />
+    <Compile Include="Business_Layer\Models\Profesion.cs" />
+    <Compile Include="Business_Layer\Models\Peticion.cs" />
     <Compile Include="Business_Layer\Models\Documento.cs" />
     <Compile Include="Business_Layer\Models\Empleado.cs" />
     <Compile Include="Business_Layer\Models\Habilidad.cs" />
@@ -214,6 +214,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Business_Layer\Controllers\ControladorasCuenta\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
