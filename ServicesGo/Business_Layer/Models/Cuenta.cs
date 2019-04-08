@@ -5,7 +5,6 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
-    [Table("Cuenta")]
     public class Cuenta
     {
         public string nombreUsuario { get; set; }
