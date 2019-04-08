@@ -9,7 +9,10 @@ namespace ServicesGo.Models
 {
     public class Administrador : Persona
     {
-        [ForeignKey("Person_Id")]
+
+    
+        
+        //[ForeignKey("Person_Id")]
         public virtual Persona Persona_Id { get; set; }
 
         public Administrador(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
@@ -18,6 +21,6 @@ namespace ServicesGo.Models
 
         }
 
-
+   
     }
 }

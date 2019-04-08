@@ -10,7 +10,7 @@ namespace ServicesGo.Models
     public class PrestadorServicios : Persona
 
     {
-
+        
         private int estiloPresentacion { get; set; }
         private int formatoHV { get; set; }
         private bool modificado { get; set; }
@@ -52,11 +52,7 @@ namespace ServicesGo.Models
         }
 
 
-        
-       
-        
-
-
+     
     }
 
 }

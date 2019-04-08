@@ -1,16 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace ServicesGo.Models
 {
+    [Table("Habilidades")]
     public class Habilidad
     {
-        private string nombre { get; set; }
-        private int experiencia { get; set; }
-        private string conocimientosEspecificos { get; set; }
-        private List<Documento> documentosSoporte { get; set; }
+        
+
+        [Key]
+        public int id { get; set; }
+
+        [Required]
+        [StringLength(80)]
+        public string nombre { get; set; }
+        [Required]
+        //[MaxLength(1), MinLength(5)]
+        public int experiencia { get; set; }
+        [Required]
+        [StringLength(300)]
+        public string conocimientosEspecificos { get; set; }
+
+       // [ForeignKey("Document")]
+        public ICollection<Documento> documentosSoporte { get; set; }
+
+        [Timestamp]
+        public Byte[] TimeStamp { get; set; }
+
+        public Habilidad()
+        {
+
+        }
 
         public Habilidad(string nombre, int experiencia, string conocimientosEpecificos)
         {
@@ -27,8 +51,9 @@ namespace ServicesGo.Models
 
         public Documento buscarDocumento(String nombre)
         {
+            List < Documento > doc = documentosSoporte.ToList();
 
-            Documento documento = documentosSoporte.Find(x => x.NombreDoc.Contains(nombre));
+            Documento documento = doc.Find(x => x.nombreDoc.Contains(nombre));
 
             return documento != null ? documento : null;
 
