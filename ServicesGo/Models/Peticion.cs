@@ -7,11 +7,11 @@ namespace ServicesGo.Models
 {
     public class Peticion
     {
-        private string nombreCuenta { get; set; }
-        private string auditor { get; set; }
-        private string observacion { get; set; }
-        private DateTime fechaMod { get; set; }
-        private bool resuelta { get; set; }
+        public string nombreCuenta { get; set; }
+        public string auditor { get; set; }
+        public string observacion { get; set; }
+        public DateTime fechaMod { get; set; }
+        public bool resuelta { get; set; }
 
         public Peticion(string nombreCuenta, string auditor, string observacion)
         {

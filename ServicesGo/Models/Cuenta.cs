@@ -7,10 +7,10 @@ namespace ServicesGo.Models
 {
     public class Cuenta
     {
-        private string nombreUsuario { get; set; }
-        private string contrasena { get; set; }
-        private string rol { get; set; }
-        private bool aprobada { get; set; }
+        public string nombreUsuario { get; set; }
+        public string contrasena { get; set; }
+        public string rol { get; set; }
+        public bool aprobada { get; set; }
 
         public Cuenta(String nombreUsuario, String contrasena, String rol)
         {
