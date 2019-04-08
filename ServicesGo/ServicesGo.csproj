@@ -153,6 +153,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -160,6 +161,15 @@
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\Profesion.cs" />
     <Compile Include="Models\Peticion.cs" />
+    <Compile Include="Business_Layer\Models\Documento.cs" />
+    <Compile Include="Business_Layer\Models\Empleado.cs" />
+    <Compile Include="Business_Layer\Models\Habilidad.cs" />
+    <Compile Include="Business_Layer\Models\PrestadorServicios.cs" />
+    <Compile Include="Business_Layer\Models\Administrador.cs" />
+    <Compile Include="Business_Layer\Models\Class1.cs" />
+    <Compile Include="Business_Layer\Models\Persona.cs" />
+    <Compile Include="Business_Layer\Models\Usuario.cs" />
+    <Compile Include="Persistence_Layer\HomeServicesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,7 +214,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\ControladorPeticion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
