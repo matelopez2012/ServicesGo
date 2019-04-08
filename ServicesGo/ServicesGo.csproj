@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -147,20 +153,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\BussinesLayer\AdministratorControllers\ControladorAdministrador.cs" />
-    <Compile Include="Controllers\BussinesLayer\AdministratorControllers\ControladoraMostrarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
+    <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Documento.cs" />
-    <Compile Include="Models\Empleado.cs" />
-    <Compile Include="Models\Habilidad.cs" />
-    <Compile Include="Models\PrestadorServicios.cs" />
-    <Compile Include="Models\Administrador.cs" />
-    <Compile Include="Models\Class1.cs" />
-    <Compile Include="Models\Persona.cs" />
-    <Compile Include="Models\Usuario.cs" />
+    <Compile Include="Business_Layer\Models\Cuenta.cs" />
+    <Compile Include="Business_Layer\Models\Profesion.cs" />
+    <Compile Include="Business_Layer\Models\Peticion.cs" />
+    <Compile Include="Business_Layer\Models\Documento.cs" />
+    <Compile Include="Business_Layer\Models\Empleado.cs" />
+    <Compile Include="Business_Layer\Models\Habilidad.cs" />
+    <Compile Include="Business_Layer\Models\PrestadorServicios.cs" />
+    <Compile Include="Business_Layer\Models\Administrador.cs" />
+    <Compile Include="Business_Layer\Models\Class1.cs" />
+    <Compile Include="Business_Layer\Models\Persona.cs" />
+    <Compile Include="Business_Layer\Models\Usuario.cs" />
+    <Compile Include="Persistence_Layer\HomeServicesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -202,9 +212,15 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Habilidads\Create.cshtml" />
+    <Content Include="Views\Habilidads\Delete.cshtml" />
+    <Content Include="Views\Habilidads\Details.cshtml" />
+    <Content Include="Views\Habilidads\Edit.cshtml" />
+    <Content Include="Views\Habilidads\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\BussinesLayer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
