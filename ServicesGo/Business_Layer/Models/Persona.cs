@@ -9,31 +9,33 @@ namespace ServicesGo.Models
 {
     public class Persona
     {
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
-        public string _nombreUsuario;
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
-        protected string _nombre;
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(50)]
-        protected string _apellidos;
-        //[Key]
+        [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
-        protected string _cedula;
+        public string cedula { get; set; }
+
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(25)]
+        public string nombreUsuario { get; set; }
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(25)]
+        public string nombre { get; set; }
+        [Required(ErrorMessage = "El campo {0} es requerido")]
+        [StringLength(50)]
+        public string apellidos { get; set; }
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(35)]
-        protected string _direccion;
+        public string direccion { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(15)]
-        protected string _telefono;
+        public string telefono { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(35)]
-        protected string _correoElectronico;
+        public string correoElectronico { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        protected string _foto;
+        public string foto { get; set; }
 
         public Persona(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
@@ -47,7 +49,8 @@ namespace ServicesGo.Models
             this.foto = foto;
         }
 
-
+    }
+    /*
         public string nombreUsuario
         {
             get => _nombreUsuario;
@@ -96,6 +99,7 @@ namespace ServicesGo.Models
             get { return _foto; }
             set { _foto = value; }
         }
+
+    */
     }
 
-}

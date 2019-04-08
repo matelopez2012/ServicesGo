@@ -10,7 +10,7 @@ namespace ServicesGo.Persistence_Layer
     public class HomeServicesContext : DbContext
     {
 
-        public HomeServicesContext() : base("HomeServices")
+        public HomeServicesContext() : base("HomeServicesDB")
         {
 
         }

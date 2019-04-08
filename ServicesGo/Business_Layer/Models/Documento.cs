@@ -13,10 +13,14 @@ namespace ServicesGo.Models
         [Key]
         public int id { get; set; }
         [Required]
+        [StringLength(30)]
         public string nombreDoc { get; set; }
         [Required]
+        [StringLength(100)]
         public string ruta { get; set; }
-        public DateTime fecha { get; set}
+
+        [Timestamp]
+        public Byte[] TimeStamp { get; set; }
 
 
 

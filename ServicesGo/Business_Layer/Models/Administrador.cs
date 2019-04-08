@@ -9,6 +9,9 @@ namespace ServicesGo.Models
 {
     public class Administrador : Persona
     {
+
+    
+        
         //[ForeignKey("Person_Id")]
         public virtual Persona Persona_Id { get; set; }
 
@@ -18,6 +21,6 @@ namespace ServicesGo.Models
 
         }
 
-
+   
     }
 }
