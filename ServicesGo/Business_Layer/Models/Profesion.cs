@@ -24,9 +24,7 @@ namespace ServicesGo.Models
         [StringLength(300)]
         public string conocimientos { get; set; }
 
-
         public Documento certificado { get; set; }
-
 
         public Documento tarjetaProfesional { get; set; }
 
