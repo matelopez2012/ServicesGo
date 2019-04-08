@@ -18,7 +18,7 @@ namespace ServicesGo.Models
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(50)]
         protected string _apellidos;
-        [Key]
+        //[Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]

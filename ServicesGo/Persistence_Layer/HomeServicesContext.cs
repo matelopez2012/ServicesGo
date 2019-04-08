@@ -9,6 +9,12 @@ namespace ServicesGo.Persistence_Layer
 {
     public class HomeServicesContext : DbContext
     {
+
+        public HomeServicesContext() : base("HomeServices")
+        {
+
+        }
+
         public DbSet<Habilidad> Habilidades { set; get; }
         public DbSet<Administrador> Administradores { set; get; }
         public DbSet<Usuario> Usuarios { get; set; }

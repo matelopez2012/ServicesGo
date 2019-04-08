@@ -1,16 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 namespace ServicesGo.Models
 {
+    [Table("Habilidades")]
     public class Habilidad
     {
-        private string nombre { get; set; }
-        private int experiencia { get; set; }
-        private string conocimientosEspecificos { get; set; }
-        private List<Documento> documentosSoporte { get; set; }
+        
+
+        [Key]
+        public int id { get; set; }
+
+        [Required]
+        public string nombre { get; set; }
+        [Required]
+        [MaxLength(1), MinLength(5)]
+        public int experiencia { get; set; }
+        [Required]
+        public string conocimientosEspecificos { get; set; }
+
+        [ForeignKey("Document")]
+        public List<Documento> documentosSoporte { get; set; }
+
+        [Timestamp]
+        public Byte[] TimeStamp { get; set; }
+
+
 
         public Habilidad(string nombre, int experiencia, string conocimientosEpecificos)
         {
