@@ -1,23 +1,43 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
 
 namespace ServicesGo.Models
 {
+    [Table("PrestadoresServicios")]
     public class PrestadorServicios : Persona
 
     {
-        
-        private int estiloPresentacion { get; set; }
-        private int formatoHV { get; set; }
-        private bool modificado { get; set; }
-        private DateTime fechaModificacion { get; set; }
-        private List<Habilidad> habilidades { get; set; }
-        private Documento arl { get; set; }
-        private Documento socialSecurity { get; set; }
+
+        [Key]
+        [Required]
+        [MaxLength(30)]
+        public string cedula { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public int estiloPresentacion { get; set; }
+
+        [Required]
+        [MaxLength(30)]
+        public int formatoHV { get; set; }
+
+        [Required]
+        public bool modificado { get; set; }
+
+
+        public DateTime fechaModificacion { get; set; }
+
+        public ICollection<Habilidad> habilidades { get; set; }
+
+        public Documento arl { get; set; }
+
+        public Documento socialSecurity { get; set; }
 
         public PrestadorServicios(string nombreUsuario, string nombre, string apellidos, string cedula, 
             string direccion, string telefono, string correoElectronico, string foto, List<Habilidad> habilidades,
