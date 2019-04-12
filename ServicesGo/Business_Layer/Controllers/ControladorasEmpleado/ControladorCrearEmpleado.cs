@@ -48,8 +48,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
         }
 
 
-        public static void crearCuenta(string nombreUsuario,string contrasena,string rol,bool estado) {
-            db.Cuentas.Add(new Cuenta(nombreUsuario, contrasena, rol, estado));
+        public static void crearCuenta(string nombreUsuario,string clave,string rol,bool estado) {
+            db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol, estado));
             db.SaveChanges();
         }
            
