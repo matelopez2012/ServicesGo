@@ -161,6 +161,9 @@
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraCrearDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraMostrarDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraObtenerPeticion.cs" />
@@ -169,6 +172,10 @@
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorActualizarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorCrearUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuario.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorAprobarPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCrearPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorEliminarPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCambiarPresentacionPerfilPS.cs" />
     <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
