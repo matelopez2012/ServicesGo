@@ -11,7 +11,7 @@ namespace ServicesGo.Models
     public class Cuenta
     {
         [Key]
-        public int id { get; set; }
+        public int id;
 
         [Required]
         [MaxLength(25)]

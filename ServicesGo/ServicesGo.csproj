@@ -155,15 +155,19 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraActualizarDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraCrearDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraMostrarDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraVerPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorActualizarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorCrearUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuario.cs" />
+    <Compile Include="Business_Layer\Models\TablaTokens.cs" />
     <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -233,7 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Business_Layer\Controllers\ControladorasCuenta\" />
+    <Folder Include="Business_Layer\Controllers\ControladorasProfesion\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
