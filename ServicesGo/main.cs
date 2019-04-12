@@ -13,9 +13,10 @@ namespace ServicesGo
 
         public Main()
         {
-            ControladorMostrarHabilidad.mostrarHabilidad(1);
-          
-            Console.WriteLine(34);
+            byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
+            byte[] key = Guid.NewGuid().ToByteArray();
+            string token = Convert.ToBase64String(time.Concat(key).ToArray());
+            Console.WriteLine(token);
         }
        
 

@@ -22,28 +22,40 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             return query.FirstOrDefault();
         }
 
-        public static void cambiarContrasena(string nombreUsuario, string contrasenaNueva)
+        public static bool cambiarContrasena(string nombreUsuario, string contrasenaNueva, string token)
         {
-            Cuenta cuenta = buscarCuenta(nombreUsuario);
-            cuenta.contrasena = contrasenaNueva;
-            db.SaveChanges();
-        }
-
-        public static bool validarToken(string nombreUsuario, string token)
-        {
-            byte[] data = Convert.FromBase64String(token);
-            DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
-
-            if (when >= DateTime.UtcNow.AddHours(-24))
+            if (validarToken(nombreUsuario, token))
             {
+                Cuenta cuenta = buscarCuenta(nombreUsuario);
+                cuenta.contrasena = contrasenaNueva;
+                db.SaveChanges();
+
                 return true;
             }
 
             return false;
         }
 
+        public static bool validarToken(string nombreUsuario, string token)
+        {
+            Cuenta cuenta = buscarCuenta(nombreUsuario);
 
-        public static void enviarCorreo(string correo)
+            byte[] data = Convert.FromBase64String(token);
+            DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
+
+            if (when >= DateTime.UtcNow.AddHours(-24))
+            {
+                if (cuenta.token == token)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+
+        public static void enviarCorreo(string nombreUsuario, string correo)
         {
             var query = from st in db.Personas
                         where st.correoElectronico == correo
@@ -70,6 +82,12 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
                         byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
                         byte[] key = Guid.NewGuid().ToByteArray();
                         string token = Convert.ToBase64String(time.Concat(key).ToArray());
+
+                        Cuenta cuenta = buscarCuenta(nombreUsuario);
+
+                        cuenta.token = token;
+
+                        db.SaveChanges();
 
                         message.Body = "<h1>Recuperar contraseña</h1><br/><p>Su token es " + token + "<p/>";
                         message.To.Add(correo);
