@@ -55,8 +55,6 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -155,9 +153,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorAprobarPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCrearPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorEliminarPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCambiarPresentacionPerfilPS.cs" />
     <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -171,7 +174,6 @@
     <Compile Include="Business_Layer\Models\Class1.cs" />
     <Compile Include="Business_Layer\Models\Persona.cs" />
     <Compile Include="Business_Layer\Models\Usuario.cs" />
-    <Compile Include="Main.cs" />
     <Compile Include="Persistence_Layer\HomeServicesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -200,9 +202,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

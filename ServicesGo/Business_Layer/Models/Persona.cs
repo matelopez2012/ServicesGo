@@ -7,20 +7,27 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
+    [Table("Personas")]
     public class Persona
     {
         [Key]
+        [Column(Order = 0)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int idPersona { get; set; }
+        
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
+   
         public string cedula { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
         public string nombreUsuario { get; set; }
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
         public string nombre { get; set; }
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(50)]
         public string apellidos { get; set; }
@@ -28,13 +35,16 @@ namespace ServicesGo.Models
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(35)]
         public string direccion { get; set; }
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(15)]
         public string telefono { get; set; }
+
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(35)]
         public string correoElectronico { get; set; }
-        [Required(ErrorMessage = "El campo {0} es requerido")]
+
+        
         public string foto { get; set; }
 
         [Timestamp]
@@ -50,6 +60,11 @@ namespace ServicesGo.Models
             this.telefono = telefono;
             this.correoElectronico = correoElectronico;
             this.foto = foto;
+        }
+
+        public Persona()
+        {
+
         }
 
     }

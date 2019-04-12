@@ -3,8 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using ServicesGo.Controllers.BussinesLayer.ControladorasHabilidad;
-using ServicesGo.Business_Layer.Controllers.ControladorasHabilidad;
+using ServicesGo.Business_Layer.Controllers.ControladorasPersona;
 
 namespace ServicesGo
 {
@@ -13,9 +12,9 @@ namespace ServicesGo
 
         public Main()
         {
-            ControladorActualizarHabilidad.actualizarHabiliad(1, "act", 1, "act");
+            /*ControladorActualizarPersona.actualizarHabiliad(1, "act", 1, "act");
           
-            Console.WriteLine(34);
+            Console.WriteLine(34);*/
         }
        
 
