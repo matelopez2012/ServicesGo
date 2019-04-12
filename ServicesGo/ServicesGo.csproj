@@ -153,6 +153,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorActualizarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorCrearAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorMostrarAdministrador.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
@@ -161,6 +164,9 @@
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCrearPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorEliminarPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCambiarPresentacionPerfilPS.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorActualizarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorCrearPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorMostrarPersona.cs" />
     <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
