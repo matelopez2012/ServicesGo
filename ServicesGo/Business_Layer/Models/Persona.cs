@@ -7,10 +7,14 @@ using System.Web;
 
 namespace ServicesGo.Models
 {
+    [Table("Personas")]
     public class Persona
     {
         [Key]
+        [Column(Order = 0)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int idPersona { get; set; }
+        
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
         public string cedula { get; set; }
@@ -50,6 +54,11 @@ namespace ServicesGo.Models
             this.telefono = telefono;
             this.correoElectronico = correoElectronico;
             this.foto = foto;
+        }
+
+        public Persona()
+        {
+
         }
 
     }

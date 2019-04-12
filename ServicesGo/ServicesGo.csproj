@@ -155,11 +155,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorActualizarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorCrearPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorMostrarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorActualizarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorCrearAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorMostrarAdministrador.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
     <Compile Include="Controllers\HabilidadsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -221,6 +228,11 @@
     <Content Include="Views\Habilidads\Details.cshtml" />
     <Content Include="Views\Habilidads\Edit.cshtml" />
     <Content Include="Views\Habilidads\Index.cshtml" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

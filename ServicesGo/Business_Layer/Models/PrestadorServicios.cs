@@ -24,11 +24,8 @@ namespace ServicesGo.Models
             string nombreDocArl,string rutaArl ,string nombreDocSegSocial, string rutaSegSocial , int estiloPresentacion,
             int formatoHV, bool modificado, DateTime fechaModificacion)
             : base(nombreUsuario, nombre, apellidos,  cedula, direccion,  telefono,  correoElectronico, foto)
-   
-
-        
-
         {
+
             
             this.habilidades = habilidades;
             this.estiloPresentacion = estiloPresentacion;
@@ -41,6 +38,10 @@ namespace ServicesGo.Models
 
         }
 
+        public PrestadorServicios()
+        {
+
+        }
 
         public void createArl(string nombreDocArl, string rutaArl) {
             this.arl = new Documento(nombreDocArl, rutaArl);

@@ -16,8 +16,12 @@ public class Empleado : Persona
         {
             
         }
-       
-        
+
+        public Empleado()
+        {
+
+        }
+
     }
 
 }
