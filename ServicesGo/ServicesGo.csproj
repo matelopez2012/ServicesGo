@@ -155,6 +155,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraCrearCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraActualizarDocumento.cs" />
@@ -192,7 +193,7 @@
     <Compile Include="Business_Layer\Models\Class1.cs" />
     <Compile Include="Business_Layer\Models\Persona.cs" />
     <Compile Include="Business_Layer\Models\Usuario.cs" />
-    <Compile Include="Main.cs" />
+    <Compile Include="MainExec.cs" />
     <Compile Include="Persistence_Layer\HomeServicesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
