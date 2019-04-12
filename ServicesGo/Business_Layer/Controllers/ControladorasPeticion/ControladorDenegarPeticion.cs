@@ -23,7 +23,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
         public static void denegarPeticion(string idPeticion, string nombreCuenta, bool resuelta)
         {
             PrestadorServicios ps = buscarPS(nombreCuenta);
-            
+
+            ps.modificado = resuelta;
+
+            Peticion peticion = db.Peticiones.Find(idPeticion);
+
+            peticion.resuelta = resuelta;
+
+            db.SaveChanges();
         }
     }
 }
