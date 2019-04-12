@@ -18,7 +18,11 @@ namespace ServicesGo.Models
 
         }
 
+        public Usuario()
+        {
 
-    
+        }
+
+
     }
 }
