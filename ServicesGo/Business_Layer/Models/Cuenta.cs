@@ -26,8 +26,10 @@ namespace ServicesGo.Models
         public string rol { get; set; }
 
         [Required]
-        [MaxLength()]
         public bool aprobada { get; set; }
+
+        [Required]
+        public string token { get; set; }
         
         public Cuenta(string nombreUsuario, string contrasena, string rol)
         {
