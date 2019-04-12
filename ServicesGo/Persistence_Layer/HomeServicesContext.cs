@@ -15,6 +15,9 @@ namespace ServicesGo.Persistence_Layer
 
         }
 
+        public DbSet<Cuenta> Cuentas { get; set; }
+        public DbSet<Peticion> Peticiones { get; set; }
+        public DbSet<Profesion> Profesiones { get; set; }
         public DbSet<Habilidad> Habilidades { set; get; }
         public DbSet<Administrador> Administradores { set; get; }
         public DbSet<Usuario> Usuarios { get; set; }
