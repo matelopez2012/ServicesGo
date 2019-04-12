@@ -10,7 +10,7 @@ using System.Web;
 namespace ServicesGo.Models
 {
 
-    [Table("Habilidades")]
+    [Table("Empleados")]
     public class Empleado : Persona
 {
 
