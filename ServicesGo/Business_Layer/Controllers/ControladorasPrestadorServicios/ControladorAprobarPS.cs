@@ -34,23 +34,23 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
 
         }
 
-        /*public static void cambiarEstadoCuenta(string nombreUsuario) {
+        public static void cambiarEstadoCuenta(string nombreUsuario) {
 
              
 
-            Cuenta c = from a in db.Cuentas
+            var c = from a in db.Cuentas
                        where a.nombreUsuario == nombreUsuario 
                        select a;
 
-            c.aprobada = true;
+            Cuenta cuenta = c.FirstOrDefault();
 
-            db.Cuentas.Add(c);
+            db.Cuentas.Add(cuenta);
 
-            db.Entry(c).State = EntityState.Modified;
+            db.Entry(cuenta).State = EntityState.Modified;
             db.SaveChanges();
 
 
-        }*/
+        }
 
         public static PrestadorServicios buscarPrestadorServicios(string cedula) {
 
