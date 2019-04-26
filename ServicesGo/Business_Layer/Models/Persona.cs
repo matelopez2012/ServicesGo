@@ -12,27 +12,27 @@ namespace ServicesGo.Models
         [Key]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
+        [StringLength(15)]
         public string cedula { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
         public string nombreUsuario { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
+        [StringLength(40)]
         public string nombre { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(50)]
+        [StringLength(70)]
         public string apellidos { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(35)]
+        [StringLength(90)]
         public string direccion { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(15)]
+        [StringLength(10)]
         public string telefono { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(35)]
+        [StringLength(50)]
         public string correoElectronico { get; set; }
         [Required(ErrorMessage = "El campo {0} es requerido")]
         public string foto { get; set; }
