@@ -155,21 +155,43 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorActualizarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorCrearAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorMostrarAdministrador.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraCrearCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraActualizarDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraCrearDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraMostrarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraObtenerPeticion.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorDenegarPeticion.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorObtenerPeticiones.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorAprobarPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCambiarPresentacionPerfilPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCrearPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorEliminarPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorActualizarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorCrearUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuario.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorActualizarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorCrearPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorMostrarPersona.cs" />
+    <Compile Include="Business_Layer\Models\Cuenta.cs" />
+    <Compile Include="Business_Layer\Models\Peticion.cs" />
+    <Compile Include="Business_Layer\Models\Profesion.cs" />
+    <Compile Include="Controllers\AdministradoresController.cs" />
     <Compile Include="Controllers\DocumentosController.cs" />
     <Compile Include="Controllers\HabilidadesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PrestadorServiciosController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -247,9 +269,25 @@
     <Content Include="Views\Documentos\Details.cshtml" />
     <Content Include="Views\Documentos\Edit.cshtml" />
     <Content Include="Views\Documentos\Index.cshtml" />
+    <Content Include="Views\PrestadorServicios\Create.cshtml" />
+    <Content Include="Views\PrestadorServicios\Delete.cshtml" />
+    <Content Include="Views\PrestadorServicios\Details.cshtml" />
+    <Content Include="Views\PrestadorServicios\Edit.cshtml" />
+    <Content Include="Views\PrestadorServicios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Administradores\Create.cshtml" />
+    <Content Include="Views\Administradores\Delete.cshtml" />
+    <Content Include="Views\Administradores\Details.cshtml" />
+    <Content Include="Views\Administradores\Edit.cshtml" />
+    <Content Include="Views\Administradores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Business_Layer\Controllers\ControladorasProfesion\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
