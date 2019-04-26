@@ -11,17 +11,17 @@ using ServicesGo.Persistence_Layer;
 
 namespace ServicesGo.Controllers
 {
-    public class HabilidadsController : Controller
+    public class HabilidadesController : Controller
     {
         private HomeServicesContext db = new HomeServicesContext();
 
-        // GET: Habilidads
+        // GET: Habilidades
         public ActionResult Index()
         {
             return View(db.Habilidades.ToList());
         }
 
-        // GET: Habilidads/Details/5
+        // GET: Habilidades/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,13 +36,13 @@ namespace ServicesGo.Controllers
             return View(habilidad);
         }
 
-        // GET: Habilidads/Create
+        // GET: Habilidades/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Habilidads/Create
+        // POST: Habilidades/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -59,7 +59,7 @@ namespace ServicesGo.Controllers
             return View(habilidad);
         }
 
-        // GET: Habilidads/Edit/5
+        // GET: Habilidades/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -74,7 +74,7 @@ namespace ServicesGo.Controllers
             return View(habilidad);
         }
 
-        // POST: Habilidads/Edit/5
+        // POST: Habilidades/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -90,7 +90,7 @@ namespace ServicesGo.Controllers
             return View(habilidad);
         }
 
-        // GET: Habilidads/Delete/5
+        // GET: Habilidades/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,7 +105,7 @@ namespace ServicesGo.Controllers
             return View(habilidad);
         }
 
-        // POST: Habilidads/Delete/5
+        // POST: Habilidades/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -11,7 +11,10 @@ namespace ServicesGo.Models
     public class Persona
     {
         [Key]
+        [Column(Order = 0)]
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
+        public int idPersona { get; set; }
+        
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
    
@@ -59,57 +62,12 @@ namespace ServicesGo.Models
             this.foto = foto;
         }
 
+        public Persona()
+        {
+
+        }
+
     }
-    /*
-        public string nombreUsuario
-        {
-            get => _nombreUsuario;
-            set => _nombreUsuario = value;
-        }
 
-        public string nombre
-        {
-            get { return _nombre; }
-            set { _nombre = value; }
-        }
-
-        public string apellidos
-        {
-            get { return _apellidos; }
-            set { _apellidos = value; }
-        }
-
-        public string cedula
-        {
-            get { return _cedula; }
-            set { _cedula = value; }
-        }
-
-        public string direccion
-        {
-            get { return _direccion; }
-            set { _direccion = value; }
-        }
-
-        public string telefono
-        {
-            get { return _telefono; }
-            set { _telefono = value; }
-        }
-
-
-        public string correoElectronico
-        {
-            get { return _correoElectronico; }
-            set { _correoElectronico = value; }
-        }
-
-        public string foto
-        {
-            get { return _foto; }
-            set { _foto = value; }
-        }
-
-    */
-    }
+}
 

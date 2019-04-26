@@ -25,8 +25,12 @@ namespace ServicesGo.Models
             this.cedula = cedula;
             
         }
-       
-        
+
+        public Empleado()
+        {
+
+        }
+
     }
 
 }
