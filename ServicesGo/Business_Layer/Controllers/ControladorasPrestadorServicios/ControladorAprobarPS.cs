@@ -13,13 +13,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         private static HomeServicesContext db = new HomeServicesContext();
 
 
-        public static List<PrestadorServicios> consultarCuentasSinAprobar() {
+        public static List<Cuenta> consultarCuentasSinAprobar() {
 
             var cuentasSinAprobar = from a in db.Cuentas
                                     where a.aprobada == false && a.rol == "PrestadorServicios"
                                     select a;
 
-            return (List <PrestadorServicios>) cuentasSinAprobar;
+            return (List <Cuenta>) cuentasSinAprobar;
 
         }
 
