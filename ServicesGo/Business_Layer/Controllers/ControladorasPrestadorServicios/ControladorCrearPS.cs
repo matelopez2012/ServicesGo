@@ -52,12 +52,12 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         }
 
 
-        public static void crearCuenta(string nombreUsuario, string clave, string rol)
+        public static void crearCuenta(string nombreUsuario, string clave, string rol, bool estado)
         {
             db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol));
             db.SaveChanges();
         }
 
-
     }
+ 
 }

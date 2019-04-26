@@ -14,10 +14,13 @@ namespace ServicesGo.Models
 
     {
 
+       
+
         [Key]
-        [Required]
-        [MaxLength(30)]
-        public string cedula { get; set; }
+        public int id { get; set; }
+
+ 
+        //public Persona persona { get; set; }
 
         [Required]
         public int estiloPresentacion { get; set; }

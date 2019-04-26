@@ -16,22 +16,23 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         public static List<Cuenta> consultarCuentasSinAprobar() {
 
             var cuentasSinAprobar = from a in db.Cuentas
-                                    where a.aprobada == false && a.rol == "PrestadorServicios"
-                                    select a;
+                      where a.aprobada == false && a.rol == "PrestadorServicios"
+                   select a;
 
-            return (List <Cuenta>) cuentasSinAprobar;
+
+
+            return (List<Cuenta>) cuentasSinAprobar;
 
         }
 
-        public static int numeroCuentasSinAprobar()
-        {
-
+        public static int numeroCuentasSinAprobar() {
+           
             var cuentasSinAprobar = from a in db.Cuentas
                                     where a.aprobada == false && a.rol == "PrestadorServicios"
                                     select a;
 
-            return cuentasSinAprobar.Count<Cuenta>();
-
+            return cuentasSinAprobar.ToList().Count();
+           
         }
 
         public static void cambiarEstadoCuenta(string nombreUsuario) {
@@ -46,7 +47,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
 
             db.Cuentas.Add(cuenta);
 
-            db.Entry(cuenta).State = EntityState.Modified;
+            db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();
 
 

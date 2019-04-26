@@ -55,6 +55,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -156,22 +158,25 @@
     <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorActualizarAdministrador.cs" />
     <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorCrearAdministrador.cs" />
     <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorMostrarAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraCrearCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraActualizarDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraCrearDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraMostrarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraObtenerPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorDenegarPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorObtenerPeticiones.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorAprobarPS.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCambiarPresentacionPerfilPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCrearPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorEliminarPS.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorCambiarPresentacionPerfilPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorActualizarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorCrearUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuario.cs" />
@@ -181,11 +186,16 @@
     <Compile Include="Business_Layer\Models\Cuenta.cs" />
     <Compile Include="Business_Layer\Models\Peticion.cs" />
     <Compile Include="Business_Layer\Models\Profesion.cs" />
-    <Compile Include="Controllers\BussinesLayer\AdministratorControllers\ControladorAdministrador.cs" />
-    <Compile Include="Controllers\BussinesLayer\AdministratorControllers\ControladoraMostrarAdministrador.cs" />
-    <Compile Include="Controllers\HabilidadsController.cs" />
+    <Compile Include="Controllers\AdministradoresController.cs" />
+    <Compile Include="Controllers\CuentasController.cs" />
+    <Compile Include="Controllers\DocumentosController.cs" />
+    <Compile Include="Controllers\HabilidadesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonasController.cs" />
+    <Compile Include="Controllers\PeticionesController.cs" />
+    <Compile Include="Controllers\PrestadoresServiciosController.cs" />
+    <Compile Include="Controllers\ProfesionesController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,10 +207,8 @@
     <Compile Include="Business_Layer\Models\Class1.cs" />
     <Compile Include="Business_Layer\Models\Persona.cs" />
     <Compile Include="Business_Layer\Models\Usuario.cs" />
-    <Compile Include="main.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="MainExec.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence_Layer\HomeServicesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -213,17 +221,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="obj\Debug\ServicesGo.csproj.FileListAbsolute.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <Content Include="obj\Debug\ServicesGo.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Debug\ServicesGo.csprojAssemblyReference.cache" />
-    <Content Include="obj\Release\ServicesGo.csproj.CoreCompileInputs.cache" />
-    <Content Include="obj\Release\ServicesGo.csprojAssemblyReference.cache" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -244,9 +246,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -258,24 +258,60 @@
     <Content Include="Views\Habilidads\Details.cshtml" />
     <Content Include="Views\Habilidads\Edit.cshtml" />
     <Content Include="Views\Habilidads\Index.cshtml" />
+    <Content Include="Views\Habilidades\Create.cshtml" />
+    <Content Include="Views\Habilidades\Delete.cshtml" />
+    <Content Include="Views\Habilidades\Details.cshtml" />
+    <Content Include="Views\Habilidades\Edit.cshtml" />
+    <Content Include="Views\Habilidades\Index.cshtml" />
+    <Content Include="Views\Documentos\Create.cshtml" />
+    <Content Include="Views\Documentos\Delete.cshtml" />
+    <Content Include="Views\Documentos\Details.cshtml" />
+    <Content Include="Views\Documentos\Edit.cshtml" />
+    <Content Include="Views\Documentos\Index.cshtml" />
+    <Content Include="Views\PrestadorServicios\Create.cshtml" />
+    <Content Include="Views\PrestadorServicios\Delete.cshtml" />
+    <Content Include="Views\PrestadorServicios\Details.cshtml" />
+    <Content Include="Views\PrestadorServicios\Edit.cshtml" />
+    <Content Include="Views\PrestadorServicios\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Administradores\Create.cshtml" />
+    <Content Include="Views\Administradores\Delete.cshtml" />
+    <Content Include="Views\Administradores\Details.cshtml" />
+    <Content Include="Views\Administradores\Edit.cshtml" />
+    <Content Include="Views\Administradores\Index.cshtml" />
+    <Content Include="Views\Cuentas\Create.cshtml" />
+    <Content Include="Views\Cuentas\Delete.cshtml" />
+    <Content Include="Views\Cuentas\Details.cshtml" />
+    <Content Include="Views\Cuentas\Edit.cshtml" />
+    <Content Include="Views\Cuentas\Index.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Create.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Delete.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Details.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Edit.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Index.cshtml" />
+    <Content Include="Views\Profesiones\Create.cshtml" />
+    <Content Include="Views\Profesiones\Delete.cshtml" />
+    <Content Include="Views\Profesiones\Details.cshtml" />
+    <Content Include="Views\Profesiones\Edit.cshtml" />
+    <Content Include="Views\Profesiones\Index.cshtml" />
+    <Content Include="Views\Peticiones\Create.cshtml" />
+    <Content Include="Views\Peticiones\Delete.cshtml" />
+    <Content Include="Views\Peticiones\Details.cshtml" />
+    <Content Include="Views\Peticiones\Edit.cshtml" />
+    <Content Include="Views\Peticiones\Index.cshtml" />
     <Content Include="Views\Personas\Create.cshtml" />
     <Content Include="Views\Personas\Delete.cshtml" />
     <Content Include="Views\Personas\Details.cshtml" />
     <Content Include="Views\Personas\Edit.cshtml" />
     <Content Include="Views\Personas\Index.cshtml" />
-    <Content Include="Views\Sensors\Create.cshtml" />
-    <Content Include="Views\Sensors\Delete.cshtml" />
-    <Content Include="Views\Sensors\Details.cshtml" />
-    <Content Include="Views\Sensors\Edit.cshtml" />
-    <Content Include="Views\Sensors\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="bin\es\" />
-    <Folder Include="bin\roslyn\" />
     <Folder Include="Business_Layer\Controllers\ControladorasProfesion\" />
-    <Folder Include="Models\" />
-    <Folder Include="obj\Debug\TempPE\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
