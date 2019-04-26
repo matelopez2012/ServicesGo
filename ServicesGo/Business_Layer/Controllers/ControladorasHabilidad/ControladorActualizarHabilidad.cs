@@ -12,7 +12,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
     {
         private static HomeServicesContext db = new HomeServicesContext();
 
-        public static Boolean actualizarHabiliad(int id, string nombre, int experiencia, string conocimientosEpecificos)
+        public static Boolean actualizarHabilidad(int id, string nombre, int experiencia, string conocimientosEpecificos)
         {
 
             Habilidad habilidad = db.Habilidades.Find(id);
