@@ -13,7 +13,7 @@ namespace ServicesGo.Controllers.BussinesLayer.ControladorasPersona
     
 
         public static Boolean crearPersona(string nombreUsuario, string nombre, string apellidos,
-            string cedula, string direccion, string telefono, string correoElectronico, string foto)
+            string cedula, string direccion,  string telefono, string correoElectronico, string foto)
         {
             
             db.Personas.Add(new Persona

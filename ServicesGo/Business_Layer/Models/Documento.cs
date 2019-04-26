@@ -19,12 +19,15 @@ namespace ServicesGo.Models
         [StringLength(100)]
         public string ruta { get; set; }
 
-        public int habilidad_id { get; set; }
+        public Habilidad habilidad { get; set; }
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
 
+        public Documento()
+        {
 
+        }
 
         public Documento(string nombreDoc, string ruta, int habilidad)
         {
