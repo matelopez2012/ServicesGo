@@ -10,14 +10,15 @@ using System.Web;
 namespace ServicesGo.Models
 {
 
-    [Table("Habilidades")]
+    [Table("Empleados")]
     public class Empleado : Persona
 {
 
         [Key]
-        [Required]
-        [MaxLength(30)]
-        public string cedula { get; set; }
+        public int id { get; set; }
+        
+
+        //public Persona persona { get; set; }
 
         public Empleado(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
             : base(nombreUsuario,  nombre,  apellidos,  cedula, direccion,  telefono,  correoElectronico,  foto)

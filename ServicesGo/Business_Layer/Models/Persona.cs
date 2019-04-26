@@ -11,9 +11,7 @@ namespace ServicesGo.Models
     public class Persona
     {
         [Key]
-        [Column(Order = 0)]
-        [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
-        public int idPersona { get; set; }
+        public int id { get; set; }
         
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
@@ -44,7 +42,10 @@ namespace ServicesGo.Models
         [StringLength(35)]
         public string correoElectronico { get; set; }
 
-        
+
+        public Cuenta cuenta { get; set; }
+
+
         public string foto { get; set; }
 
         [Timestamp]

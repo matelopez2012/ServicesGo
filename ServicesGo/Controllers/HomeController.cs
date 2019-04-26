@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ServicesGo;
 
-namespace WebApplication1.Controllers
+namespace SacarAuth.Controllers
 {
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-           MainExec example = new MainExec();
-            Console.WriteLine("ww");
             return View();
         }
 

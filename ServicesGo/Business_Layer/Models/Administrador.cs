@@ -16,7 +16,7 @@ namespace ServicesGo.Models
         [Key]
         public int id { get; set; }
         //[ForeignKey("Person_Id")]
-        public Persona persona  {get; set;}
+        //public Persona persona  {get; set;}
         //public int PersonaId { get; set; }
 
         
@@ -24,6 +24,7 @@ namespace ServicesGo.Models
         public Administrador(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
         : base(nombreUsuario, nombre, apellidos, cedula, direccion, telefono, correoElectronico, foto)
         {
+
 
         }
 

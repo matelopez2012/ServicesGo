@@ -22,7 +22,7 @@ namespace ServicesGo.Controllers
         }
 
         // GET: Personas/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
@@ -47,7 +47,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Create([Bind(Include = "id,cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace ServicesGo.Controllers
         }
 
         // GET: Personas/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
@@ -79,7 +79,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Edit([Bind(Include = "id,cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace ServicesGo.Controllers
         }
 
         // GET: Personas/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
@@ -108,7 +108,7 @@ namespace ServicesGo.Controllers
         // POST: Personas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             Persona persona = db.Personas.Find(id);
             db.Personas.Remove(persona);
