@@ -1,0 +1,58 @@
+﻿@model ServicesGo.Models.Peticion
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Peticion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nombreCuenta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombreCuenta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.auditor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.auditor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.observacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaMod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaMod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.resuelta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.resuelta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

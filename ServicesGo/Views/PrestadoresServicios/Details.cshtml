@@ -1,14 +1,13 @@
-﻿@model ServicesGo.Models.Persona
+﻿@model ServicesGo.Models.PrestadorServicios
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Details";
 }
 
-<h2>Delete</h2>
+<h2>Details</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>Persona</h4>
+    <h4>PrestadorServicios</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -83,14 +82,41 @@
             @Html.DisplayFor(model => model.TimeStamp)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.estiloPresentacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.estiloPresentacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.formatoHV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.formatoHV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.modificado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.modificado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaModificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaModificacion)
+        </dd>
+
     </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
-    }
 </div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

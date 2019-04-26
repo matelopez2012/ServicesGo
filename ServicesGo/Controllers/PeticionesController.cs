@@ -11,107 +11,107 @@ using ServicesGo.Persistence_Layer;
 
 namespace ServicesGo.Controllers
 {
-    public class PersonasController : Controller
+    public class PeticionesController : Controller
     {
         private HomeServicesContext db = new HomeServicesContext();
 
-        // GET: Personas
+        // GET: Peticiones
         public ActionResult Index()
         {
-            return View(db.Personas.ToList());
+            return View(db.Peticiones.ToList());
         }
 
-        // GET: Personas/Details/5
+        // GET: Peticiones/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            Peticion peticion = db.Peticiones.Find(id);
+            if (peticion == null)
             {
                 return HttpNotFound();
             }
-            return View(persona);
+            return View(peticion);
         }
 
-        // GET: Personas/Create
+        // GET: Peticiones/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Personas/Create
+        // POST: Peticiones/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Create([Bind(Include = "id,nombreCuenta,auditor,observacion,fechaMod,resuelta")] Peticion peticion)
         {
             if (ModelState.IsValid)
             {
-                db.Personas.Add(persona);
+                db.Peticiones.Add(peticion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(persona);
+            return View(peticion);
         }
 
-        // GET: Personas/Edit/5
+        // GET: Peticiones/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            Peticion peticion = db.Peticiones.Find(id);
+            if (peticion == null)
             {
                 return HttpNotFound();
             }
-            return View(persona);
+            return View(peticion);
         }
 
-        // POST: Personas/Edit/5
+        // POST: Peticiones/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Edit([Bind(Include = "id,nombreCuenta,auditor,observacion,fechaMod,resuelta")] Peticion peticion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(persona).State = EntityState.Modified;
+                db.Entry(peticion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(persona);
+            return View(peticion);
         }
 
-        // GET: Personas/Delete/5
+        // GET: Peticiones/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            Peticion peticion = db.Peticiones.Find(id);
+            if (peticion == null)
             {
                 return HttpNotFound();
             }
-            return View(persona);
+            return View(peticion);
         }
 
-        // POST: Personas/Delete/5
+        // POST: Peticiones/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Persona persona = db.Personas.Find(id);
-            db.Personas.Remove(persona);
+            Peticion peticion = db.Peticiones.Find(id);
+            db.Peticiones.Remove(peticion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

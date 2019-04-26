@@ -11,107 +11,107 @@ using ServicesGo.Persistence_Layer;
 
 namespace ServicesGo.Controllers
 {
-    public class PersonasController : Controller
+    public class CuentasController : Controller
     {
         private HomeServicesContext db = new HomeServicesContext();
 
-        // GET: Personas
+        // GET: Cuentas
         public ActionResult Index()
         {
-            return View(db.Personas.ToList());
+            return View(db.Cuentas.ToList());
         }
 
-        // GET: Personas/Details/5
+        // GET: Cuentas/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            Cuenta cuenta = db.Cuentas.Find(id);
+            if (cuenta == null)
             {
                 return HttpNotFound();
             }
-            return View(persona);
+            return View(cuenta);
         }
 
-        // GET: Personas/Create
+        // GET: Cuentas/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Personas/Create
+        // POST: Cuentas/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Create([Bind(Include = "id,nombreUsuario,contrasena,rol,aprobada,token")] Cuenta cuenta)
         {
             if (ModelState.IsValid)
             {
-                db.Personas.Add(persona);
+                db.Cuentas.Add(cuenta);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(persona);
+            return View(cuenta);
         }
 
-        // GET: Personas/Edit/5
+        // GET: Cuentas/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            Cuenta cuenta = db.Cuentas.Find(id);
+            if (cuenta == null)
             {
                 return HttpNotFound();
             }
-            return View(persona);
+            return View(cuenta);
         }
 
-        // POST: Personas/Edit/5
+        // POST: Cuentas/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Edit([Bind(Include = "id,nombreUsuario,contrasena,rol,aprobada,token")] Cuenta cuenta)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(persona).State = EntityState.Modified;
+                db.Entry(cuenta).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(persona);
+            return View(cuenta);
         }
 
-        // GET: Personas/Delete/5
+        // GET: Cuentas/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
-            if (persona == null)
+            Cuenta cuenta = db.Cuentas.Find(id);
+            if (cuenta == null)
             {
                 return HttpNotFound();
             }
-            return View(persona);
+            return View(cuenta);
         }
 
-        // POST: Personas/Delete/5
+        // POST: Cuentas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Persona persona = db.Personas.Find(id);
-            db.Personas.Remove(persona);
+            Cuenta cuenta = db.Cuentas.Find(id);
+            db.Cuentas.Remove(cuenta);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

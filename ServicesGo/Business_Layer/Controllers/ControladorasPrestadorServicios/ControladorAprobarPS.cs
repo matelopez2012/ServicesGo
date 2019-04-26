@@ -13,37 +13,39 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         private static HomeServicesContext db = new HomeServicesContext();
 
 
-        public static List<PrestadorServicios> consultarCuentasSinAprobar() {
+        public static List<Cuenta> consultarCuentasSinAprobar() {
 
             var cuentasSinAprobar = from a in db.Cuentas
-                                    where a.aprobada = "false" && a.rol = "PrestadorServicios"
-                                    select a;
+                      where a.aprobada == false && a.rol == "PrestadorServicios"
+                   select a;
 
-            return cuentasSinAprobar;
+
+
+            return (List<Cuenta>) cuentasSinAprobar;
 
         }
 
         public static int numeroCuentasSinAprobar() {
-
+           
             var cuentasSinAprobar = from a in db.Cuentas
-                                    where a.aprobada = "false" && a.rol="PrestadorServicios"
+                                    where a.aprobada == false && a.rol == "PrestadorServicios"
                                     select a;
 
-            return cuentasSinAprobar.length;
-
+            return cuentasSinAprobar.ToList().Count();
+           
         }
 
         public static void cambiarEstadoCuenta(string nombreUsuario) {
 
              
 
-            Cuenta c = from a in db.Cuentas
-                       where a.nombreUsuario = nombreUsuario 
+            var c = from a in db.Cuentas
+                       where a.nombreUsuario == nombreUsuario 
                        select a;
 
-            c.aprobada = "true";
+            Cuenta cuenta = c.FirstOrDefault();
 
-            db.Cuentas.Add(c);
+            db.Cuentas.Add(cuenta);
 
             db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();

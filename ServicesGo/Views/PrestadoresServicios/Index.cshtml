@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ServicesGo.Models.Persona>
+﻿@model IEnumerable<ServicesGo.Models.PrestadorServicios>
 
 @{
     ViewBag.Title = "Index";
@@ -38,6 +38,18 @@
         <th>
             @Html.DisplayNameFor(model => model.TimeStamp)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estiloPresentacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.formatoHV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.modificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaModificacion)
+        </th>
         <th></th>
     </tr>
 
@@ -69,6 +81,18 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estiloPresentacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.formatoHV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.modificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaModificacion)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |

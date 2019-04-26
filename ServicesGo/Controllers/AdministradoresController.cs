@@ -28,7 +28,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = db.Personas.Find(id);
+            Administrador administrador = (Administrador)db.Personas.Find(id);
             if (administrador == null)
             {
                 return HttpNotFound();
@@ -66,7 +66,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = db.Personas.Find(id);
+            Administrador administrador = (Administrador) db.Personas.Find(id);
             if (administrador == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = db.Personas.Find(id);
+            Administrador administrador = (Administrador) db.Personas.Find(id);
             if (administrador == null)
             {
                 return HttpNotFound();
@@ -110,7 +110,7 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
-            Administrador administrador = db.Personas.Find(id);
+            Administrador administrador = (Administrador) db.Personas.Find(id);
             db.Personas.Remove(administrador);
             db.SaveChanges();
             return RedirectToAction("Index");

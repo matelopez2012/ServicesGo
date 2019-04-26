@@ -11,7 +11,7 @@ namespace WebApplication1.Controllers
     {
         public ActionResult Index()
         {
-           MainExec example = new MainExec();
+           //MainExec example = new MainExec();
             Console.WriteLine("ww");
             return View();
         }

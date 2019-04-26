@@ -187,10 +187,14 @@
     <Compile Include="Business_Layer\Models\Peticion.cs" />
     <Compile Include="Business_Layer\Models\Profesion.cs" />
     <Compile Include="Controllers\AdministradoresController.cs" />
+    <Compile Include="Controllers\CuentasController.cs" />
     <Compile Include="Controllers\DocumentosController.cs" />
     <Compile Include="Controllers\HabilidadesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\PrestadorServiciosController.cs" />
+    <Compile Include="Controllers\PersonasController.cs" />
+    <Compile Include="Controllers\PeticionesController.cs" />
+    <Compile Include="Controllers\PrestadoresServiciosController.cs" />
+    <Compile Include="Controllers\ProfesionesController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -204,7 +208,6 @@
     <Compile Include="Business_Layer\Models\Persona.cs" />
     <Compile Include="Business_Layer\Models\Usuario.cs" />
     <Compile Include="MainExec.cs" />
-    <Compile Include="Main.cs" />
     <Compile Include="Migrations\201904081425558_InitialCreate.cs" />
     <Compile Include="Migrations\201904081425558_InitialCreate.Designer.cs">
       <DependentUpon>201904081425558_InitialCreate.cs</DependentUpon>
@@ -284,6 +287,31 @@
     <Content Include="Views\Administradores\Details.cshtml" />
     <Content Include="Views\Administradores\Edit.cshtml" />
     <Content Include="Views\Administradores\Index.cshtml" />
+    <Content Include="Views\Cuentas\Create.cshtml" />
+    <Content Include="Views\Cuentas\Delete.cshtml" />
+    <Content Include="Views\Cuentas\Details.cshtml" />
+    <Content Include="Views\Cuentas\Edit.cshtml" />
+    <Content Include="Views\Cuentas\Index.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Create.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Delete.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Details.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Edit.cshtml" />
+    <Content Include="Views\PrestadoresServicios\Index.cshtml" />
+    <Content Include="Views\Profesiones\Create.cshtml" />
+    <Content Include="Views\Profesiones\Delete.cshtml" />
+    <Content Include="Views\Profesiones\Details.cshtml" />
+    <Content Include="Views\Profesiones\Edit.cshtml" />
+    <Content Include="Views\Profesiones\Index.cshtml" />
+    <Content Include="Views\Peticiones\Create.cshtml" />
+    <Content Include="Views\Peticiones\Delete.cshtml" />
+    <Content Include="Views\Peticiones\Details.cshtml" />
+    <Content Include="Views\Peticiones\Edit.cshtml" />
+    <Content Include="Views\Peticiones\Index.cshtml" />
+    <Content Include="Views\Personas\Create.cshtml" />
+    <Content Include="Views\Personas\Delete.cshtml" />
+    <Content Include="Views\Personas\Details.cshtml" />
+    <Content Include="Views\Personas\Edit.cshtml" />
+    <Content Include="Views\Personas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

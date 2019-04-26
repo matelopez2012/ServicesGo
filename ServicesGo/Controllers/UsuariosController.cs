@@ -28,7 +28,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Personas.Find(id);
+            Usuario usuario = (Usuario) db.Personas.Find(id);
             if (usuario == null)
             {
                 return HttpNotFound();
@@ -66,7 +66,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Personas.Find(id);
+            Usuario usuario = (Usuario) db.Personas.Find(id);
             if (usuario == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Usuario usuario = db.Personas.Find(id);
+            Usuario usuario = (Usuario) db.Personas.Find(id);
             if (usuario == null)
             {
                 return HttpNotFound();
@@ -112,7 +112,7 @@ namespace ServicesGo.Controllers
         {
 
 
-            Usuario usuario = db.Personas.Find(id);
+            Usuario usuario = (Usuario) db.Personas.Find(id);
             db.Personas.Remove(usuario);
             db.SaveChanges();
             return RedirectToAction("Index");

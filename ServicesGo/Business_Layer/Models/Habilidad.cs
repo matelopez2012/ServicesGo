@@ -11,7 +11,7 @@ namespace ServicesGo.Models
     public class Habilidad
     {
         
-
+        
         [Key]
         public int id { get; set; }
 

@@ -11,107 +11,107 @@ using ServicesGo.Persistence_Layer;
 
 namespace ServicesGo.Controllers
 {
-    public class PrestadorServiciosController : Controller
+    public class ProfesionesController : Controller
     {
         private HomeServicesContext db = new HomeServicesContext();
 
-        // GET: PrestadorServicios
+        // GET: Profesiones
         public ActionResult Index()
         {
-            return View(db.Personas.ToList());
+            return View(db.Profesiones.ToList());
         }
 
-        // GET: PrestadorServicios/Details/5
-        public ActionResult Details(string id)
+        // GET: Profesiones/Details/5
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PrestadorServicios prestadorServicios = db.Personas.Find(id);
-            if (prestadorServicios == null)
+            Profesion profesion = db.Profesiones.Find(id);
+            if (profesion == null)
             {
                 return HttpNotFound();
             }
-            return View(prestadorServicios);
+            return View(profesion);
         }
 
-        // GET: PrestadorServicios/Create
+        // GET: Profesiones/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: PrestadorServicios/Create
+        // POST: Profesiones/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto")] PrestadorServicios prestadorServicios)
+        public ActionResult Create([Bind(Include = "id,nombreProfesion,experiencia,conocimientos")] Profesion profesion)
         {
             if (ModelState.IsValid)
             {
-                db.Personas.Add(prestadorServicios);
+                db.Profesiones.Add(profesion);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(prestadorServicios);
+            return View(profesion);
         }
 
-        // GET: PrestadorServicios/Edit/5
-        public ActionResult Edit(string id)
+        // GET: Profesiones/Edit/5
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PrestadorServicios prestadorServicios = db.Personas.Find(id);
-            if (prestadorServicios == null)
+            Profesion profesion = db.Profesiones.Find(id);
+            if (profesion == null)
             {
                 return HttpNotFound();
             }
-            return View(prestadorServicios);
+            return View(profesion);
         }
 
-        // POST: PrestadorServicios/Edit/5
+        // POST: Profesiones/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto")] PrestadorServicios prestadorServicios)
+        public ActionResult Edit([Bind(Include = "id,nombreProfesion,experiencia,conocimientos")] Profesion profesion)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(prestadorServicios).State = EntityState.Modified;
+                db.Entry(profesion).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(prestadorServicios);
+            return View(profesion);
         }
 
-        // GET: PrestadorServicios/Delete/5
-        public ActionResult Delete(string id)
+        // GET: Profesiones/Delete/5
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PrestadorServicios prestadorServicios = db.Personas.Find(id);
-            if (prestadorServicios == null)
+            Profesion profesion = db.Profesiones.Find(id);
+            if (profesion == null)
             {
                 return HttpNotFound();
             }
-            return View(prestadorServicios);
+            return View(profesion);
         }
 
-        // POST: PrestadorServicios/Delete/5
+        // POST: Profesiones/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            PrestadorServicios prestadorServicios = db.Personas.Find(id);
-            db.Personas.Remove(prestadorServicios);
+            Profesion profesion = db.Profesiones.Find(id);
+            db.Profesiones.Remove(profesion);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
