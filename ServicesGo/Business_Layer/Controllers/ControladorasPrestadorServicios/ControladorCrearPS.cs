@@ -16,12 +16,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
             string nombreDocArl, string rutaArl, string nombreDocSegSocial, string rutaSegSocial, int estiloPresentacion,
             int formatoHV, bool modificado, DateTime fechaModificacion, string clave, string rol, bool estado)
         {
-            if (validarPS(cedula) && validarCuenta(nombreUsuario)) {
+            if (validarPS(cedula) && validarCuenta(nombreUsuario))
+            {
 
-                db.PrestadoresServicios.Add(new PrestadorServicios(nombreUsuario, nombre,  apellidos,  cedula,
-            direccion,  telefono,  correoElectronico, foto,  habilidades,
+                db.PrestadoresServicios.Add(new PrestadorServicios(nombreUsuario, nombre, apellidos, cedula,
+            direccion, telefono, correoElectronico, foto, habilidades,
              nombreDocArl, rutaArl, nombreDocSegSocial, rutaSegSocial, estiloPresentacion,
-            formatoHV,  modificado,  fechaModificacion));
+            formatoHV, modificado, fechaModificacion));
             }
 
         }
@@ -51,12 +52,12 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         }
 
 
-        public static void crearCuenta(string nombreUsuario, string clave, string rol, bool estado)
+        public static void crearCuenta(string nombreUsuario, string clave, string rol)
         {
-            db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol, estado));
+            db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol));
             db.SaveChanges();
         }
 
 
- 
+    }
 }

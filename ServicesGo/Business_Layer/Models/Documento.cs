@@ -32,7 +32,11 @@ namespace ServicesGo.Models
             ruta = ruta;
             habilidad = habilidad;
         }
-        
 
+        public Documento(string nombreDoc, string ruta)
+        {
+            nombreDoc = nombreDoc;
+            ruta = ruta;
+        }
     }
 }

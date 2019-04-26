@@ -16,32 +16,33 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         public static List<PrestadorServicios> consultarCuentasSinAprobar() {
 
             var cuentasSinAprobar = from a in db.Cuentas
-                                    where a.aprobada = "false" && a.rol = "PrestadorServicios"
+                                    where a.aprobada == false && a.rol == "PrestadorServicios"
                                     select a;
 
-            return cuentasSinAprobar;
+            return (List <PrestadorServicios>) cuentasSinAprobar;
 
         }
 
-        public static int numeroCuentasSinAprobar() {
+        public static int numeroCuentasSinAprobar()
+        {
 
             var cuentasSinAprobar = from a in db.Cuentas
-                                    where a.aprobada = "false" && a.rol="PrestadorServicios"
+                                    where a.aprobada == false && a.rol == "PrestadorServicios"
                                     select a;
 
-            return cuentasSinAprobar.length;
+            return cuentasSinAprobar.Count<Cuenta>();
 
         }
 
-        public static void cambiarEstadoCuenta(string nombreUsuario) {
+        /*public static void cambiarEstadoCuenta(string nombreUsuario) {
 
              
 
             Cuenta c = from a in db.Cuentas
-                       where a.nombreUsuario = nombreUsuario 
+                       where a.nombreUsuario == nombreUsuario 
                        select a;
 
-            c.aprobada = "true";
+            c.aprobada = true;
 
             db.Cuentas.Add(c);
 
@@ -49,7 +50,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
             db.SaveChanges();
 
 
-        }
+        }*/
 
         public static PrestadorServicios buscarPrestadorServicios(string cedula) {
 

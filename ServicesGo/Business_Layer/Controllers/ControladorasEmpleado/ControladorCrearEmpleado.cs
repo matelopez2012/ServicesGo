@@ -12,11 +12,11 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
         private static HomeServicesContext db = new HomeServicesContext();
       
         public static void crearEmpleado(string nombreUsuario , string nombre, string apellidos, string cedula, 
-            string direccion, string telefono, string correoElectrónico, string foto,string clave, string rol, bool estado)
+            string direccion, string telefono, string correoElectrónico, string foto,string clave, string rol)
         {
             if (validarEmpleado(cedula) && validarCuenta(nombreUsuario)) {
 
-                crearCuenta( nombreUsuario,  clave,  rol,  estado);
+                crearCuenta( nombreUsuario,  clave,  rol);
                 db.Empleados.Add(new Empleado(nombreUsuario,nombre, apellidos,  cedula,  direccion,  telefono,  correoElectrónico,  foto));
                 db.SaveChanges();
             }
@@ -48,8 +48,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
         }
 
 
-        public static void crearCuenta(string nombreUsuario,string clave,string rol,bool estado) {
-            db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol, estado));
+        public static void crearCuenta(string nombreUsuario,string clave,string rol) {
+            db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol));
             db.SaveChanges();
         }
            
