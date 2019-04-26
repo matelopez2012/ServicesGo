@@ -214,14 +214,8 @@
     <Compile Include="Business_Layer\Models\Class1.cs" />
     <Compile Include="Business_Layer\Models\Persona.cs" />
     <Compile Include="Business_Layer\Models\Usuario.cs" />
-    <Compile Include="Main.cs" />
-    <Compile Include="Migrations\201904081425558_InitialCreate.cs" />
-    <Compile Include="Migrations\201904081425558_InitialCreate.Designer.cs">
-      <DependentUpon>201904081425558_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MainExec.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Persistence_Layer\HomeServicesContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
