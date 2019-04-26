@@ -42,10 +42,10 @@ namespace ServicesGo.Models
         [StringLength(35)]
         public string correoElectronico { get; set; }
 
- 
+
         public Cuenta cuenta { get; set; }
 
-        
+
         public string foto { get; set; }
 
         [Timestamp]

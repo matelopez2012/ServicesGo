@@ -9,8 +9,7 @@ namespace ServicesGo.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "ServicesGo.Persistence_Layer.HomeServicesContext";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(ServicesGo.Persistence_Layer.HomeServicesContext context)

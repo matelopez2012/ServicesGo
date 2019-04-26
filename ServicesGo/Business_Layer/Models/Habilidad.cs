@@ -28,7 +28,7 @@ namespace ServicesGo.Models
        // [ForeignKey("Document")]
         public ICollection<Documento> documentosSoporte { get; set; }
 
-        public PrestadorServicios PrestadorServicios_id { get; set; }
+        public PrestadorServicios prestadorservicios { get; set; }
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
