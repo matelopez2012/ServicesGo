@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ServicesGo.Business_Layer.Controllers.ControladorasCuenta;
+using ServicesGo.Models;
 using ServicesGo.Persistence_Layer;
 
 namespace CrearCuentaTest
@@ -15,9 +16,19 @@ namespace CrearCuentaTest
         {
             bool esperado = true;
 
-            //db.Cuentas.Add();
+            db.Cuentas.Add(new Cuenta("mateo_lopez", "mateo123", "Empleado"));
 
-            ControladoraCrearCuenta.buscarCuenta("");
+            Cuenta prueba = ControladoraCrearCuenta.buscarCuenta("mateo_lopez");
+
+            bool real = true;
+
+            if(prueba == null)
+            {
+                real = false;
+            }
+
+            Assert.AreEqual(esperado, real);
+
         }
     }
 }
