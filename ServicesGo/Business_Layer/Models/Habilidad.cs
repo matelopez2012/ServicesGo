@@ -11,12 +11,12 @@ namespace ServicesGo.Models
     public class Habilidad
     {
         
-
+        
         [Key]
         public int id { get; set; }
 
         [Required]
-        [StringLength(80)]
+        [StringLength(50)]
         public string nombre { get; set; }
         [Required]
         //[MaxLength(1), MinLength(5)]
@@ -28,8 +28,12 @@ namespace ServicesGo.Models
        // [ForeignKey("Document")]
         public ICollection<Documento> documentosSoporte { get; set; }
 
+        public PrestadorServicios prestadorservicios { get; set; }
+
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
+
+       
 
         public Habilidad()
         {
