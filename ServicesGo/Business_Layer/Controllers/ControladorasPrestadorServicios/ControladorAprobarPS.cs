@@ -8,25 +8,22 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
 {
-    public static class ControladorAprobarPS
+    public  class ControladorAprobarPS
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        private  HomeServicesContext db = new HomeServicesContext();
 
 
-        public static List<Cuenta> consultarCuentasSinAprobar() {
-
+        //Metodo que busca y retorna las cuentas de PS que estan sin aprobar, en una lista de Cuentas
+        public List<Cuenta> consultarCuentasSinAprobar() {
             var cuentasSinAprobar = from a in db.Cuentas
                       where a.aprobada == false && a.rol == "PrestadorServicios"
                    select a;
-
-
-
             return (List<Cuenta>) cuentasSinAprobar;
 
         }
 
-        public static int numeroCuentasSinAprobar() {
-           
+        //Metodo que retorna la cantidad de cuentas de PS que estan sin aprobar
+        public  int numeroCuentasSinAprobar() {
             var cuentasSinAprobar = from a in db.Cuentas
                                     where a.aprobada == false && a.rol == "PrestadorServicios"
                                     select a;
@@ -35,38 +32,37 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
            
         }
 
-        public static void cambiarEstadoCuenta(string nombreUsuario) {
 
-             
+        //Metodo que cambia el estado de lacuenta registrada bajo el valor recibido por el parametro "nombreUsuario"
+        public  void cambiarEstadoCuenta(string nombreUsuario) {
 
             var c = from a in db.Cuentas
                        where a.nombreUsuario == nombreUsuario 
                        select a;
 
             Cuenta cuenta = c.FirstOrDefault();
-
+            cuenta.aprobado = true;
             db.Cuentas.Add(cuenta);
-
             db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();
 
 
         }
 
-        public static PrestadorServicios buscarPrestadorServicios(string cedula) {
 
+        //Metodo que busca en la base de datos en registro de el PS registrada bajo el valor recibido en el parametro "cedula" 
+        //y lo retorna como un objeto de tipo PredtadorServicios
+        public PrestadorServicios buscarPrestadorServicios(string cedula) {
             PrestadorServicios ps = db.PrestadoresServicios.Find(cedula);
-
             return ps;
 
         }
 
 
-        public static Cuenta buscarCuentaSinAprobar(string nombreUsuario) {
-
-
+        //Metodo que busca en la base de datos en registro de la cuenta registrada bajo el valor recibido en el parametro "nombreUsuario" 
+        //y lo retorna como un objeto de tipo cuenta
+        public  Cuenta buscarCuentaSinAprobar(string nombreUsuario) {
             Cuenta c = db.Cuentas.Find(nombreUsuario);
-
             return c;
 
         }
