@@ -180,9 +180,11 @@
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraCrearCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraActualizarDocumento.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraCrearDocumento.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladoraMostrarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorActualizarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorCrearDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorEliminarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorMostrarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorMostrarDocumentos.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
