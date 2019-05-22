@@ -11,15 +11,9 @@ namespace ServicesGo.Controllers.BussinesLayer.ControladorasHabilidad
     {
         private static HomeServicesContext db = new HomeServicesContext();
 
-        /*public PrestadorServicios buscarPS(int id)
-        {
-            var query = from st in db.PrestadoresServicios
-                        where st.id == id
-                        select st;
 
-            return query.FirstOrDefault();
-        }*/
-
+        //Metodo para crear una habilidad
+        // @Param : 
         public static Boolean crearHabilidad(int id_ps, string nombre, int experiencia, string conocimientosEpecificos)
         {
             

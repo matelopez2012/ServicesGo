@@ -188,7 +188,9 @@
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorActualizarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorCrearHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorEliminarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidades.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraObtenerPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorDenegarPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorObtenerPeticiones.cs" />
@@ -331,6 +333,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Business_Layer\Controllers\ControladorasProfesion\" />
+    <Folder Include="Controllers\BussinesLayer\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
