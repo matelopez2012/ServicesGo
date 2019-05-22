@@ -7,20 +7,20 @@ using System.Web;
 
 namespace ServicesGo.Controllers.BussinesLayer.ControladorasHabilidad
 {
-    public static class ControladorCrearHabilidad
+    public class ControladorCrearHabilidad
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        private HomeServicesContext db = new HomeServicesContext();
 
 
-        //Metodo para crear una habilidad
-        // @Param : 
-        public static Boolean crearHabilidad(int id_ps, string nombre, int experiencia, string conocimientosEpecificos)
+        //Metodo para crear una habilidad, recibe todos los atributos de la hábilidad a crear
+        
+        public Boolean crearHabilidad(int id_ps, string nombre, int experiencia, string conocimientosEpecificos)
         {
-            
-            
+            //Añade un nuevo objeto a la tabla Habilidades
             db.Habilidades.Add(new Habilidad { nombre=nombre, experiencia = experiencia, conocimientosEspecificos = conocimientosEpecificos});
+            //Guardamos los cambios
             db.SaveChanges();
-
+            //retornamos true si los cambios fueron exítosos 
             return true;
         }
 
