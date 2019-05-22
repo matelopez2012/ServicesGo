@@ -7,11 +7,15 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
 {
-    public static class ControladorCrearEmpleado
+    public  class ControladorCrearEmpleado
     {
-        private static HomeServicesContext db = new HomeServicesContext();
-      
-        public static void crearEmpleado(string nombreUsuario , string nombre, string apellidos, string cedula, 
+        //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
+        private HomeServicesContext db = new HomeServicesContext();
+
+        //Metodo para crear un Empleado, recibe todos los atributos de el empleado a crear
+        //El metodo llama los metodos que verifican que no exista una cuenta de usuario o empleado con los datos brindados
+        //y crea tanto la cuneta de usuario como el empleado
+        public  void crearEmpleado(string nombreUsuario , string nombre, string apellidos, string cedula, 
             string direccion, string telefono, string correoElectrónico, string foto,string clave, string rol, bool estado)
         {
             if (validarEmpleado(cedula) && validarCuenta(nombreUsuario)) {
@@ -24,7 +28,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
 
         }
 
-        public static Boolean validarEmpleado(string cedula)
+        //Metodo para valiar que no exista un empleado registrada bajo el valor recibida en el parametro "cedula"
+        public  Boolean validarEmpleado(string cedula)
         {
             bool salida = false;
             var bandera = db.Empleados.Find(cedula);
@@ -35,7 +40,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
             return salida;
         }
 
-        public static Boolean validarCuenta(string nombreUsuario)
+        //Metodo para valiar que no exista una cuenta registrada bajo el valor recibida en el parametro "nombreUsuario"
+        public Boolean validarCuenta(string nombreUsuario)
         {
             bool salida = false;
             var bandera = db.Cuentas.Find(nombreUsuario);
@@ -47,8 +53,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
             return salida;
         }
 
-
-        public static void crearCuenta(string nombreUsuario,string clave,string rol,bool estado) {
+        //Metodo para crear una Cuenta, recibe todos los atributos de la Cuenta a crear
+        public void crearCuenta(string nombreUsuario,string clave,string rol,bool estado) {
             db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol));
             db.SaveChanges();
         }
