@@ -1,4 +1,5 @@
-﻿using ServicesGo.Models;
+﻿using ServicesGo.Business_Layer.Models;
+using ServicesGo.Models;
 using ServicesGo.Persistence_Layer;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
         private HomeServicesContext db = new HomeServicesContext();
 
         //Metodo que recibe como parametro el id del objeto, el nuevo nombre, la experiencia y los nuevos conocimientos específicos
-        public Boolean actualizarHabilidad(int id, string nombre, int experiencia, string conocimientosEpecificos)
+        public Boolean actualizarHabilidad(int id, HabilidadDefinida habilidad_id, int experiencia, string conocimientosEpecificos)
         {
 
             //Búscamos el objeto cuto id es el que recibimos por parametro
             Habilidad habilidad = db.Habilidades.Find(id);
 
             //Asignamos al objeto creado, los nuevos atributos
-            habilidad.nombre = nombre;
+            habilidad.habilidad_id = habilidad_id;
             habilidad.experiencia = experiencia;
             habilidad.conocimientosEspecificos = conocimientosEpecificos;
 

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ServicesGo.Business_Layer.Controllers.ControladorasHabilidad;
 using ServicesGo.Models;
 using ServicesGo.Persistence_Layer;
 
@@ -47,7 +48,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombre,experiencia,conocimientosEspecificos,TimeStamp")] Habilidad habilidad)
+        public ActionResult Create([Bind(Include = "id,experiencia,conocimientosEspecificos,TimeStamp")] Habilidad habilidad)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +80,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombre,experiencia,conocimientosEspecificos,TimeStamp")] Habilidad habilidad)
+        public ActionResult Edit([Bind(Include = "id,experiencia,conocimientosEspecificos,TimeStamp")] Habilidad habilidad)
         {
             if (ModelState.IsValid)
             {
@@ -110,9 +111,15 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            /*
             Habilidad habilidad = db.Habilidades.Find(id);
             db.Habilidades.Remove(habilidad);
             db.SaveChanges();
+            return RedirectToAction("Index");
+        */
+            ControladorEliminarHabilidad ServicioEliminar = new ControladorEliminarHabilidad();
+            ServicioEliminar.eliminarHabilidad(id);
+
             return RedirectToAction("Index");
         }
 

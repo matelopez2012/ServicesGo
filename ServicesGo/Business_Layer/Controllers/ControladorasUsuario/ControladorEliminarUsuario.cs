@@ -5,24 +5,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
+namespace ServicesGo.Business_Layer.Controllers.ControladorasUsuario
 {
-    //Servicio para eliminar documento
-    public class ControladorEliminarDocumento
+    public class ControladorEliminarUsuario
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
-        private static HomeServicesContext db = new HomeServicesContext();
+        private HomeServicesContext db = new HomeServicesContext();
 
-        //Método para eliminar una habilidad
-        //@Param : id de la hábilidad a eliminar
+        //Método para eliminar un usuario
+        //@Param : id del usuario a eliminar
         //@Return : boolean retorna verdadero si se eliminó la habilidad
-        public Boolean eliminarHabilidad(int id)
+        public Boolean eliminarUsuario(int id)
         {
 
             //Búscamos el objeto que tiene el id que obtenemos por párametro
-            Documento documento = db.Documentos.Find(id);
+            Habilidad habilidad = db.Habilidades.Find(id);
             //Eliminamos el objeto obtenido
-            db.Documentos.Remove(documento);
+            db.Habilidades.Remove(habilidad);
             //guardamos los cambios
             db.SaveChanges();
 
@@ -30,4 +29,4 @@ namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
             return true;
         }
     }
-}
+}   

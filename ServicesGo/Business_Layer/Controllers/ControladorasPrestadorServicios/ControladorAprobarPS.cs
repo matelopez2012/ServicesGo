@@ -41,7 +41,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
                        select a;
 
             Cuenta cuenta = c.FirstOrDefault();
-            cuenta.aprobado = true;
+            //cuenta.aprobado = true;
             db.Cuentas.Add(cuenta);
             db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();

@@ -8,9 +8,11 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
 {
+    //Servicio para actualizar documento
     public class ControladoraActualizarDocumento
     {
 
+        //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();
 
         public static Boolean actualizarDocumento(int id, string nombreDoc, string ruta, Habilidad habilidad)

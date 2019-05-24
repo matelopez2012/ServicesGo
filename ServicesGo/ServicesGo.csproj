@@ -5,6 +5,11 @@
   <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" />
+  <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
   <Import Project="..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props" Condition="Exists('..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" />
@@ -202,11 +207,14 @@
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorEliminarPS.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorActualizarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorCrearUsuario.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorEliminarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuario.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuarios.cs" />
     <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorActualizarPersona.cs" />
     <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorCrearPersona.cs" />
     <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorMostrarPersona.cs" />
     <Compile Include="Business_Layer\Models\Cuenta.cs" />
+    <Compile Include="Business_Layer\Models\HabilidadDefinida.cs" />
     <Compile Include="Business_Layer\Models\Peticion.cs" />
     <Compile Include="Business_Layer\Models\Profesion.cs" />
     <Compile Include="Controllers\AdministradoresController.cs" />
@@ -236,6 +244,30 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Antlr3.Runtime.dll" />
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.Core.dll" />
+    <Content Include="bin\Microsoft.AspNet.Identity.EntityFramework.dll" />
+    <Content Include="bin\Microsoft.AspNet.TelemetryCorrelation.dll" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\System.Diagnostics.DiagnosticSource.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Optimization.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -276,16 +308,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Habilidads\Create.cshtml" />
-    <Content Include="Views\Habilidads\Delete.cshtml" />
-    <Content Include="Views\Habilidads\Details.cshtml" />
-    <Content Include="Views\Habilidads\Edit.cshtml" />
-    <Content Include="Views\Habilidads\Index.cshtml" />
-    <Content Include="Views\Habilidades\Create.cshtml" />
-    <Content Include="Views\Habilidades\Delete.cshtml" />
-    <Content Include="Views\Habilidades\Details.cshtml" />
-    <Content Include="Views\Habilidades\Edit.cshtml" />
-    <Content Include="Views\Habilidades\Index.cshtml" />
     <Content Include="Views\Documentos\Create.cshtml" />
     <Content Include="Views\Documentos\Delete.cshtml" />
     <Content Include="Views\Documentos\Details.cshtml" />
@@ -331,6 +353,11 @@
     <Content Include="Views\Personas\Details.cshtml" />
     <Content Include="Views\Personas\Edit.cshtml" />
     <Content Include="Views\Personas\Index.cshtml" />
+    <Content Include="Views\Habilidades\Create.cshtml" />
+    <Content Include="Views\Habilidades\Delete.cshtml" />
+    <Content Include="Views\Habilidades\Details.cshtml" />
+    <Content Include="Views\Habilidades\Edit.cshtml" />
+    <Content Include="Views\Habilidades\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -366,6 +393,19 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\analyzers\dotnet\cs\Roslyn.Diagnostics.Analyzers.dll" />
     <Analyzer Include="..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\analyzers\dotnet\cs\Roslyn.Diagnostics.CSharp.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Humanizer.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.CodeQuality.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetCore.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
+    <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\Google.Protobuf.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.CSharp.dll" />
+    <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -404,6 +444,11 @@
     <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props'))" />
     <Error Condition="!Exists('..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetFramework.Analyzers.2.9.2\build\Microsoft.NetFramework.Analyzers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.FxCopAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.FxCopAnalyzers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props'))" />
