@@ -1,10 +1,13 @@
-﻿using System;
+﻿using ServicesGo.Models;
+using ServicesGo.Persistence_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
 {
+    //Servicio para mostrar documentos
     public class ControladorMostrarDocumentos
     {
 
@@ -15,7 +18,7 @@ namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
         public List<Documento> mostrarDocumentos()
         {
             //Se  buscan todas las habilidades
-            List<Documento> documentos = db.Documentos.toList();
+            List<Documento> documentos = db.Documentos.ToList();
 
             //Si la lista de habilidades es diferente de nulo, retornamos la lista
             if (documentos != null)

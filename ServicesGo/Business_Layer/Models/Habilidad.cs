@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServicesGo.Business_Layer.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,7 +18,7 @@ namespace ServicesGo.Models
 
         [Required]
         [StringLength(50)]
-        public string nombre { get; set; }
+        public HabilidadDefinida habilidad_id { get; set; }
         [Required]
         //[MaxLength(1), MinLength(5)]
         public int experiencia { get; set; }
@@ -28,7 +29,7 @@ namespace ServicesGo.Models
        // [ForeignKey("Document")]
         public ICollection<Documento> documentosSoporte { get; set; }
 
-        //public PrestadorServicios prestadorservicios { get; set; }
+        public PrestadorServicios prestadorservicios_id { get; set; }
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
@@ -72,8 +73,8 @@ namespace ServicesGo.Models
 
         public void eliminarDocumento(string nombreDoc)
         {
-            Documento documento = buscarDocumento(nombre);
-            this.documentosSoporte.Remove(documento);
+            //Documento documento = buscarDocumento(nombre);
+        //this.documentosSoporte.Remove(documento);
 
         }
 
