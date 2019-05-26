@@ -18,7 +18,9 @@ namespace ServicesGo.Controllers
         // GET: Administradores
         public ActionResult Index()
         {
-            return View(db.Personas.ToList());
+            //return View(db.Personas.ToList());
+            ControladoraMostrarAdministradores servicioMostrarAdministradores = new ControladoraMostrarAdministradores();
+            return View(servicioMostrarAdministradores.mostrarAdministradores());
         }
 
         // GET: Administradores/Details/5
@@ -28,7 +30,9 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Administrador administrador = (Administrador)db.Personas.Find(id);
+            //Administrador administrador = (Administrador)db.Personas.Find(id);
+            ControladoraMostrarAdministrador servicioMostrarAdministrador = new ControladoraMostrarAdministrador();
+            Administrador administrador = servicioMostrarAdministrador.mostrarAdministrador(id);
             if (administrador == null)
             {
                 return HttpNotFound();
@@ -51,8 +55,12 @@ namespace ServicesGo.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*
                 db.Personas.Add(administrador);
                 db.SaveChanges();
+                */
+                ControladorCrearAdministrador servicioCrearAdministrador = new ControladorCrearAdministrador();
+                servicioCrearAdministrador.agregarAdministrador(administrador);
                 return RedirectToAction("Index");
             }
 
@@ -83,8 +91,12 @@ namespace ServicesGo.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*
                 db.Entry(administrador).State = EntityState.Modified;
                 db.SaveChanges();
+                */
+                ControladorActualizarAdministrador servicioActualizarAdministrador = new ControladorActualizarAdministrador();
+                servicioActualizarAdministrador.modificarAdministrador(administrador);
                 return RedirectToAction("Index");
             }
             return View(administrador);
@@ -110,9 +122,13 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(string id)
         {
+            /*
             Administrador administrador = (Administrador) db.Personas.Find(id);
             db.Personas.Remove(administrador);
             db.SaveChanges();
+            */
+            ControladorEliminarAdministrador servicioEliminarAdministrador = new ControladorEliminarAdministrador();
+            servicioEliminarAdministrador.eliminarAdministrador(id);
             return RedirectToAction("Index");
         }
 

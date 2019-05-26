@@ -183,9 +183,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorActualizarAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorCrearAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\AdministratorControllers\ControladorMostrarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorActualizarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorCrearAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorEliminarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorMostrarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorMostrarAdministradores.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraActualizarCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraCrearCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
@@ -203,6 +205,8 @@
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorEliminarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidad.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidades.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorEliminarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorMostrarPersonas.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraObtenerPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorDenegarPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorObtenerPeticiones.cs" />
@@ -215,9 +219,9 @@
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorEliminarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuario.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasUsuario\ControladorMostrarUsuarios.cs" />
-    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorActualizarPersona.cs" />
-    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorCrearPersona.cs" />
-    <Compile Include="Business_Layer\Controllers\PersonControllers\ControladorMostrarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorActualizarPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorCrearPersona.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorMostrarPersona.cs" />
     <Compile Include="Business_Layer\Models\Cuenta.cs" />
     <Compile Include="Business_Layer\Models\HabilidadDefinida.cs" />
     <Compile Include="Business_Layer\Models\Peticion.cs" />
