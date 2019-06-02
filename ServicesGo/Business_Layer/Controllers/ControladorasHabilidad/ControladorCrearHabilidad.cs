@@ -16,14 +16,15 @@ namespace ServicesGo.Controllers.BussinesLayer.ControladorasHabilidad
 
         //Metodo para crear una habilidad, recibe todos los atributos de la hábilidad a crear
         
-        public Boolean crearHabilidad(int id_ps, HabilidadDefinida nombre, int experiencia, string conocimientosEpecificos)
+        public void crearHabilidad(int id_ps, HabilidadDefinida nombre, int experiencia, string conocimientosEpecificos)
         {
             //Añade un nuevo objeto a la tabla Habilidades
             db.Habilidades.Add(new Habilidad { habilidad_id = nombre, experiencia = experiencia, conocimientosEspecificos = conocimientosEpecificos});
             //Guardamos los cambios
             db.SaveChanges();
             //retornamos true si los cambios fueron exítosos 
-            return true;
+
+
         }
 
     }

@@ -10,10 +10,10 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
     public class ControladorMostrarHabilidad
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
-        private static HomeServicesContext db = new HomeServicesContext();
+        private HomeServicesContext db = new HomeServicesContext();
 
         //Método para mostrar la habilidad cuyo id obtenemos por párametro
-        public static Habilidad mostrarHabilidad(int id)
+        public Habilidad mostrarHabilidad(int id)
         {
             //Obtenemos la hábilidad que tiene el id que obtenemos por párametro
             Habilidad habilidad = db.Habilidades.Find(id);
@@ -26,7 +26,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
             //En caso contrario, ó sea, no existe, retornamos nulo
             else
             {
-                return null;
+                return new Habilidad();
             }
         }
     }

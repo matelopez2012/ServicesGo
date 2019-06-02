@@ -15,22 +15,30 @@ namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();
 
-        public static Boolean actualizarDocumento(int id, string nombreDoc, string ruta, Habilidad habilidad)
-        {
 
+        //Método para actualizar un determinado documento
+        //Recibimos como parametros con los nuevos valores de las variables a actualizar
+        //Es de tipo void, por lo tanto no retorna nada
+        public void actualizarDocumento(int id, string nombreDoc, string ruta, Habilidad habilidad)
+        {
+            //Buscamos el objeto en el ORM cuyo id es el que obtenemos por parámetro
             Documento documento = db.Documentos.Find(id);
+            //Asignamos los nuevos atributos a la instancia creada anteriormente 
             documento.nombreDoc = nombreDoc;
             documento.ruta = ruta;
             documento.habilidad = habilidad;
-            db.Documentos.Add(documento);
 
+            //Añadimos la instancia documento con los nuevos atributos al ORM
+            //reemplazand a la isntancia del documento original
+            db.Documentos.Add(documento);
+            //Comprobamos si existe alguna modificacion de los atributos 
             db.Entry(documento).State = EntityState.Modified;
+            //Guardamos los cambios en el ORM, quedando así actualizado
             db.SaveChanges();
 
-            return true;
         }
-
-        public static Boolean actualizarHabilidadDocumento(int id, Habilidad habilidad)
+        
+        public static void actualizarHabilidadDocumento(int id, Habilidad habilidad)
         {
 
             Documento documento = db.Documentos.Find(id);
@@ -39,9 +47,9 @@ namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
             db.Documentos.Add(documento);
 
             db.Entry(documento).State = EntityState.Modified;
+
             db.SaveChanges();
 
-            return true;
         }
 
     }
