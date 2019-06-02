@@ -21,7 +21,8 @@ namespace ServicesGo.Models
 
         
 
-        public Administrador(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
+        public Administrador(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion,
+            string telefono, string correoElectronico, string foto)
         : base(nombreUsuario, nombre, apellidos, cedula, direccion, telefono, correoElectronico, foto)
         {
 

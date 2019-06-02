@@ -18,7 +18,9 @@ namespace ServicesGo.Controllers
         // GET: Personas
         public ActionResult Index()
         {
-            return View(db.Personas.ToList());
+            //return View(db.Personas.ToList());
+            ControladoraMostrarPersonas servicioMostrarPersonas = new ControladoraMostrarPersonas();
+            return View(servicioMostrarPersonas.mostrarPersonas());
         }
 
         // GET: Personas/Details/5
@@ -28,7 +30,9 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Persona persona = db.Personas.Find(id);
+            //Persona persona = db.Personas.Find(id);
+            ControladoraMostrarPersona servicioMostrarPersona = new ControladoraMostrarPersona();
+            Persona persona = servicioMostrarPersona.mostrarPersona(id);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -51,8 +55,12 @@ namespace ServicesGo.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*
                 db.Personas.Add(persona);
                 db.SaveChanges();
+                */
+                ControladorCrearPersona servicioCrearPersona = new ControladorCrearPersona();
+                servicioCrearPersona.agregarPersona(persona);
                 return RedirectToAction("Index");
             }
 
@@ -83,8 +91,12 @@ namespace ServicesGo.Controllers
         {
             if (ModelState.IsValid)
             {
+                /*
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
+                */
+                ControladorActualizarPersona servicioActualizarPersona = new ControladorActualizarPersona();
+                servicioActualizarPersona.modificarPersona(persona);
                 return RedirectToAction("Index");
             }
             return View(persona);
@@ -110,9 +122,13 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            /*
             Persona persona = db.Personas.Find(id);
             db.Personas.Remove(persona);
             db.SaveChanges();
+            */
+            ControladorEliminarPersona servicioEliminarPersona = new ControladorEliminarPersona();
+            servicioEliminarPersona.eliminarPersona(id);
             return RedirectToAction("Index");
         }
 
