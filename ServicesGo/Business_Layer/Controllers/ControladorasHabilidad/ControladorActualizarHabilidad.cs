@@ -15,7 +15,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
         private HomeServicesContext db = new HomeServicesContext();
 
         //Metodo que recibe como parametro el id del objeto, el nuevo nombre, la experiencia y los nuevos conocimientos específicos
-        public Boolean actualizarHabilidad(int id, HabilidadDefinida habilidad_id, int experiencia, string conocimientosEpecificos)
+        public void actualizarHabilidad(int id, HabilidadDefinida habilidad_id, int experiencia, string conocimientosEpecificos)
         {
 
             //Búscamos el objeto cuto id es el que recibimos por parametro
@@ -32,8 +32,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
             //Guardamos los cambios
             db.SaveChanges();
            
-            //Retornamos true para indicar que el objeto se actualizó correctamente
-            return true;
+     
         }
         
     }
