@@ -7,20 +7,24 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
 {
-    public static class ControladoraCrearDocumento
-    {
 
+
+
+    public class ControladoraCrearDocumento
+    {
+        //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();
 
-
-        public static Boolean crearDocumento(string nombreDoc, string ruta, int habilidad )
+        //Metodo para crear un nuevo documento cuyos atributos pasamos por parámetro
+        //Recibimos como parametros los atributos del documento a crear
+        public void crearDocumento(string nombreDoc, string ruta, int habilidad )
         {
+            //Creamos una nueva instancia, y se envía por parametro sus atributos
             Documento document = new Documento(nombreDoc, ruta, habilidad);
 
+            //Añadimos la instancia que acabamos de crea al mapeador de clases ORM
             db.Documentos.Add(document);
             db.SaveChanges();
-
-            return true;
         }
     }
 }

@@ -39,6 +39,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <DocumentationFile>bin\ServicesGo.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -63,6 +65,9 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Novacta.Documentation.CodeExamples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Novacta.Documentation.CodeExamples.1.0.0\lib\netstandard2.0\Novacta.Documentation.CodeExamples.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -367,6 +372,7 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <Analyzer Include="..\packages\Documentation.Analyser.1.1.1\analyzers\dotnet\cs\Documentation.Analyser.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Humanizer.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />

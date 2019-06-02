@@ -11,6 +11,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 {
     public class ControladoraRecuperarContrasena
     {
+
+        public const int EXPIRATION_TIME = -24;
         private static HomeServicesContext db = new HomeServicesContext();
 
         public static Cuenta buscarCuenta(string nombreUsuario)
@@ -43,12 +45,11 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             byte[] data = Convert.FromBase64String(token);
             DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
 
-            if (when >= DateTime.UtcNow.AddHours(-24))
+            if (when >= DateTime.UtcNow.AddHours(EXPIRATION_TIME) && cuenta.token == token)
             {
-                if (cuenta.token == token)
-                {
-                    return true;
-                }
+
+                return true;
+                
             }
 
             return false;
