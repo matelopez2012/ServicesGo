@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2003
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesGo", "ServicesGo\ServicesGo.csproj", "{52B690FA-4FC5-4312-9112-D3AF13D2D84F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pruebas_app", "UnitTestProject1\Pruebas_app.csproj", "{3FC76EC4-9689-4489-BF1A-1798EE75C8DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServicesGo_Tests", "ServicesGo_Tests\ServicesGo_Tests.csproj", "{B63FCBA8-8FDE-4028-AFDD-1DFD57A58CE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{52B690FA-4FC5-4312-9112-D3AF13D2D84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52B690FA-4FC5-4312-9112-D3AF13D2D84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52B690FA-4FC5-4312-9112-D3AF13D2D84F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3FC76EC4-9689-4489-BF1A-1798EE75C8DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3FC76EC4-9689-4489-BF1A-1798EE75C8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3FC76EC4-9689-4489-BF1A-1798EE75C8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3FC76EC4-9689-4489-BF1A-1798EE75C8DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B63FCBA8-8FDE-4028-AFDD-1DFD57A58CE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B63FCBA8-8FDE-4028-AFDD-1DFD57A58CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B63FCBA8-8FDE-4028-AFDD-1DFD57A58CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B63FCBA8-8FDE-4028-AFDD-1DFD57A58CE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

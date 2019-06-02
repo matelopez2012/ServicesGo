@@ -11,24 +11,29 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 {
     public class ControladoraRecuperarContrasena
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        // Instancia del contexto que permitirá mapear la base de datos
+        private HomeServicesContext dataBaseMap = new HomeServicesContext();
 
-        public static Cuenta buscarCuenta(string nombreUsuario)
+        // Consulta si existe la cuenta en la base de datos y la retorna
+        // null en caso de no existir
+        public Cuenta BuscarCuenta(string nombreUsuario)
         {
-            var query = from st in db.Cuentas
-                        where st.nombreUsuario == nombreUsuario
-                        select st;
+            var consultaCuenta = from st in dataBaseMap.Cuentas
+                                 where st.NombreUsuario == nombreUsuario
+                                 select st;
 
-            return query.FirstOrDefault();
+            return consultaCuenta.FirstOrDefault();
         }
 
-        public static bool cambiarContrasena(string nombreUsuario, string contrasenaNueva, string token)
+        // El sistema genera un token para que el usuario cambie de contraseña
+        // envia el token como link al correo y entra por GET al metodo
+        public bool CambiarContrasena(string nombreUsuario, string contrasenaNueva, string token)
         {
-            if (validarToken(nombreUsuario, token))
+            if (ValidarToken(nombreUsuario, token))
             {
-                Cuenta cuenta = buscarCuenta(nombreUsuario);
-                cuenta.contrasena = contrasenaNueva;
-                db.SaveChanges();
+                Cuenta cuenta = BuscarCuenta(nombreUsuario);
+                cuenta.Contrasena = contrasenaNueva;
+                dataBaseMap.SaveChanges();
 
                 return true;
             }
@@ -36,16 +41,19 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             return false;
         }
 
-        public static bool validarToken(string nombreUsuario, string token)
+        // Recibe el token generado por el sistema para una cuenta en especifico
+        // El token es generado cuando el usuario requiere cambiar contraseña
+        public bool ValidarToken(string nombreUsuario, string token)
         {
-            Cuenta cuenta = buscarCuenta(nombreUsuario);
+            var cuenta = BuscarCuenta(nombreUsuario);
 
-            byte[] data = Convert.FromBase64String(token);
-            DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
+            byte[] tokenBase64 = Convert.FromBase64String(token);
+            DateTime fechaGenerado = DateTime.FromBinary(BitConverter.ToInt64(tokenBase64, 0));
 
-            if (when >= DateTime.UtcNow.AddHours(-24))
+            // El token tiene caducidad
+            if (fechaGenerado >= DateTime.UtcNow.AddHours(-24))
             {
-                if (cuenta.token == token)
+                if (cuenta.Token == token)
                 {
                     return true;
                 }
@@ -54,10 +62,9 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             return false;
         }
 
-
-        public static void enviarCorreo(string nombreUsuario, string correo)
+        public void EnviarCorreo(string nombreUsuario, string correo)
         {
-            var query = from st in db.Personas
+            var query = from st in dataBaseMap.Personas
                         where st.correoElectronico == correo
                         select st;
 
@@ -83,23 +90,15 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
                         byte[] key = Guid.NewGuid().ToByteArray();
                         string token = Convert.ToBase64String(time.Concat(key).ToArray());
 
-                        Cuenta cuenta = buscarCuenta(nombreUsuario);
+                        var cuenta = BuscarCuenta(nombreUsuario);
 
-                        cuenta.token = token;
+                        cuenta.Token = token;
 
-                        db.SaveChanges();
+                        dataBaseMap.SaveChanges();
 
                         message.Body = "<h1>Recuperar contraseña</h1><br/><p>Su token es " + token + "<p/>";
                         message.To.Add(correo);
-
-                        try
-                        {
-                            smtpClient.Send(message);
-                        }
-                        catch (Exception ex)
-                        {
-                            //Error, could not send the message
-                        }
+                        smtpClient.Send(message);
                     }
                 }
             }

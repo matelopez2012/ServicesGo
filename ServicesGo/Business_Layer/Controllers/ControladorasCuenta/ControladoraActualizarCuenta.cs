@@ -9,27 +9,31 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 {
     public class ControladoraActualizarCuenta
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        // Instancia del contexto que permitirá mapear la base de datos
+        private HomeServicesContext dataBaseMap = new HomeServicesContext();
 
-        public static Cuenta buscarCuenta(string nombreUsuario)
+        // Consulta si existe la cuenta en la base de datos y la retorna
+        // null en caso de que no exista
+        public Cuenta BuscarCuenta(string nombreUsuario)
         {
-            var query = from st in db.Cuentas
-                        where st.nombreUsuario == nombreUsuario
+            var consultaCuenta = from st in dataBaseMap.Cuentas
+                        where st.NombreUsuario == nombreUsuario
                         select st;
 
-            return query.FirstOrDefault();
+            return consultaCuenta.FirstOrDefault();
         }
 
-        public static bool actualizarRol(string nombreUsuario, string rol)
+        // Método para actualizar el rol de un usuario
+        public bool ActualizarRol(string nombreUsuario, string rol)
         {
-            if (buscarCuenta(nombreUsuario) != null)
+            if (BuscarCuenta(nombreUsuario) != null)
             {
-                var query = from st in db.Cuentas
-                            where st.nombreUsuario == nombreUsuario
-                            select st;
-
-                query.FirstOrDefault().rol = rol;
-                db.SaveChanges();
+                // Si la cuenta existe la guarda
+                var cuenta = BuscarCuenta(nombreUsuario);
+                
+                //Y cambia su rol
+                cuenta.Rol = rol;
+                dataBaseMap.SaveChanges();
 
                 return true;
             }

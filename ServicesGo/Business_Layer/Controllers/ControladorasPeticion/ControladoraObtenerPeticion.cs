@@ -9,9 +9,9 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
 {
     public class ControladoraObtenerPeticion
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        private HomeServicesContext db = new HomeServicesContext();
 
-        public static Peticion verPeticion(string nombreCuenta, DateTime fecha)
+        public Peticion verPeticion(string nombreCuenta, DateTime fecha)
         {
             Peticion peticion = db.Peticiones.SqlQuery("select nombreCuenta, fechaMod" +
                 "from Peticiones " +

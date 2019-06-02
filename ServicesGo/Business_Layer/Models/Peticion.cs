@@ -11,7 +11,7 @@ namespace ServicesGo.Models
     public class Peticion
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(25)]

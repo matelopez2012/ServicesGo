@@ -9,25 +9,29 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 {
     public class ControladoraCrearCuenta
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        // Instancia del contexto que permitirá mapear la base de datos
+        private HomeServicesContext dataBaseMap = new HomeServicesContext();
 
-        public static Cuenta buscarCuenta(string nombreUsuario)
+        // Consulta si existe la cuenta en la base de datos y la retorna
+        // null en caso de no existir
+        public Cuenta BuscarCuenta(string nombreUsuario)
         {
-            var query = from st in db.Cuentas
-                        where st.nombreUsuario == nombreUsuario
-                        select st;
+            var consultaCuenta = from st in dataBaseMap.Cuentas
+                                 where st.NombreUsuario == nombreUsuario
+                                 select st;
 
-            return query.FirstOrDefault();
+            return consultaCuenta.FirstOrDefault();
         }
 
-        public static bool crearCuenta(string nombreUsuario, string contrasena, string rol)
+        // 
+        public bool CrearCuenta(string nombreUsuario, string contrasena, string rol)
         {
-            if (buscarCuenta(nombreUsuario) != null)
+            if (BuscarCuenta(nombreUsuario) == null)
             {
                 Cuenta cuenta = new Cuenta(nombreUsuario,contrasena,rol);
 
-                db.Cuentas.Add(cuenta);
-                db.SaveChanges();
+                dataBaseMap.Cuentas.Add(cuenta);
+                dataBaseMap.SaveChanges();
 
                 return true;
             }

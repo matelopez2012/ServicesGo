@@ -12,11 +12,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
 
         private static HomeServicesContext db = new HomeServicesContext();
 
-
-
         public static Persona mostrarPersona(string id)
         {
-
             Persona persona = db.Personas.Find(id);
 
             if(persona != null)

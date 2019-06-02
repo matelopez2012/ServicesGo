@@ -13,7 +13,7 @@ namespace ServicesGo.Controllers
 {
     public class AdministradoresController : Controller
     {
-        private HomeServicesContext db = new HomeServicesContext();
+        private readonly HomeServicesContext db = new HomeServicesContext();
 
         // GET: Administradores
         public ActionResult Index()

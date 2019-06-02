@@ -11,33 +11,31 @@ namespace ServicesGo.Models
     public class Cuenta
     {
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [MaxLength(25)]
-        public string nombreUsuario { get; set; }
+        public string NombreUsuario { get; set; }
 
         [Required]
         [MaxLength(40)]
-        public string contrasena { get; set; }
+        public string Contrasena { get; set; }
 
         [Required]
         [MaxLength(15)]
-        public string rol { get; set; }
+        public string Rol { get; set; }
 
-        [Required]
-        public bool aprobada { get; set; }
+        public bool EstaAprobada { get; set; }
 
-        [Required]
         [MaxLength(32)]
-        public string token { get; set; }
+        public string Token { get; set; }
         
         public Cuenta(string nombreUsuario, string contrasena, string rol)
         {
-            this.nombreUsuario = nombreUsuario;
-            this.contrasena = contrasena;
-            this.rol = rol;
-            this.aprobada = false;
+            this.NombreUsuario = nombreUsuario;
+            this.Contrasena = contrasena;
+            this.Rol = rol;
+            this.EstaAprobada = false;
         }
     }
 }

@@ -9,9 +9,9 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
 {
     public class ControladorDenegarPeticion
     {
-        private static HomeServicesContext db = new HomeServicesContext();
+        private HomeServicesContext db = new HomeServicesContext();
 
-        public static PrestadorServicios buscarPS(string nombreUsuario)
+        public PrestadorServicios buscarPS(string nombreUsuario)
         {
             var query = from st in db.PrestadoresServicios
                         where st.nombreUsuario == nombreUsuario
@@ -20,7 +20,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
             return query.FirstOrDefault();
         }
 
-        public static void denegarPeticion(string idPeticion, string nombreCuenta, bool resuelta)
+        public void denegarPeticion(string idPeticion, string nombreCuenta, bool resuelta)
         {
             PrestadorServicios ps = buscarPS(nombreCuenta);
 
