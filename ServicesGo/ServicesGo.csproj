@@ -191,15 +191,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorActualizarAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorCrearAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorEliminarAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorMostrarAdministrador.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasAdministrator\ControladorMostrarAdministradores.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraActualizarCuenta.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraCrearCuenta.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraValidarInicioSesion.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladoraRecuperarContrasena.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrador\ControladorActualizarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrador\ControladorCrearAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrador\ControladorEliminarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrador\ControladorMostrarAdministrador.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasAdministrador\ControladorMostrarAdministradores.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorActualizarCuenta.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorCrearCuenta.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorValidarInicioSesion.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorRecuperarContrasena.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorActualizarDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorCrearDocumento.cs" />
     <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorEliminarDocumento.cs" />
@@ -215,7 +215,7 @@
     <Compile Include="Business_Layer\Controllers\ControladorasHabilidad\ControladorMostrarHabilidades.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorEliminarPersona.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPersona\ControladorMostrarPersonas.cs" />
-    <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladoraObtenerPeticion.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorObtenerPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorDenegarPeticion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPeticion\ControladorObtenerPeticiones.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasPrestadorServicios\ControladorAprobarPS.cs" />
@@ -396,7 +396,6 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\Documentation.Analyser.1.1.1\analyzers\dotnet\cs\Documentation.Analyser.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.BannedApiAnalyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.BannedApiAnalyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\analyzers\dotnet\Microsoft.CodeAnalysis.PublicApiAnalyzers.CodeFixes.dll" />

@@ -7,13 +7,13 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
 {
-    public static class ControladorMostrarPersona
+    public class ControladorMostrarPersona
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();
 
         //Método para mostrar la persona cuyo id obtenemos por párametro
-        public Persona mostrarPersona(string id)
+        public Persona mostrarPersona(int id)
         {
             //Obtenemos la persona que tiene el id que obtenemos por párametro
             Persona persona = db.Personas.Find(id);

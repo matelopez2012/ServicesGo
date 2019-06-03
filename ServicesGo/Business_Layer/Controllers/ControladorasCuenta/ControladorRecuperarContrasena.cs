@@ -9,7 +9,7 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 {
-    public class ControladoraRecuperarContrasena
+    public class ControladorRecuperarContrasena
     {
         // Instancia del contexto que permitirá mapear la base de datos
         private HomeServicesContext dataBaseMap = new HomeServicesContext();

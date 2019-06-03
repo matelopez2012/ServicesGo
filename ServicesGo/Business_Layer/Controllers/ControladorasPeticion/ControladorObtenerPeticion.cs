@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
 {
-    public class ControladoraObtenerPeticion
+    public class ControladorObtenerPeticion
     {
         private HomeServicesContext db = new HomeServicesContext();
 

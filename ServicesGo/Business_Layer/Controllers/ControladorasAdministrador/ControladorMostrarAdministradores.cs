@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ServicesGo.Models;
+using ServicesGo.Persistence_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrator
+namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
 {
     public class ControladorMostrarAdministradores
     {
@@ -15,7 +17,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrator
         public List<Administrador> mostrarAdministradores()
         {
             //Se  buscan todos los administradores
-            List<Administrador> administradores = db.Administrador.ToList();
+            List<Administrador> administradores = db.Administradores.ToList();
 
             //Si la lista de administradores es diferente de nulo, retornamos la lista
             if (administradores != null)

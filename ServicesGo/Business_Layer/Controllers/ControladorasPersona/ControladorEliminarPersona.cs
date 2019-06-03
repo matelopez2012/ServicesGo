@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ServicesGo.Models;
+using ServicesGo.Persistence_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,13 +18,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         public Boolean eliminarPersona(int id)
         {
             //Búscamos el objeto que tiene el id que obtenemos por párametro
-            Persona persona = db.Persona.Find(id);
+            Persona persona = db.Personas.Find(id);
             //Eliminamos el objeto obtenido
-            db.Persona.Remove(persona);
+            db.Personas.Remove(persona);
             //guardamos los cambios
             db.SaveChanges();
 
             //retornamos true si el objeto se eliminó correctamente
             return true;
         }
+    }
 }

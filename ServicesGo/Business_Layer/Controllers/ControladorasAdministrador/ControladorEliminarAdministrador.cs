@@ -1,9 +1,11 @@
-﻿using System;
+﻿using ServicesGo.Models;
+using ServicesGo.Persistence_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrator
+namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
 {
     public class ControladorEliminarAdministrador
     {
@@ -16,13 +18,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrator
         public Boolean eliminarAdministrador(int id)
         {
             //Búscamos el objeto que tiene el id que obtenemos por párametro
-            Administrador administrador = db.Administrador.Find(id);
+            Administrador administrador = db.Administradores.Find(id);
             //Eliminamos el objeto obtenido
-            db.Administrador.Remove(administrador);
+            db.Administradores.Remove(administrador);
             //guardamos los cambios
             db.SaveChanges();
 
             //retornamos true si el objeto se eliminó correctamente
             return true;
         }
+    }
 }

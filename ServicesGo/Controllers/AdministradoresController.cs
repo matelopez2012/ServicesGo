@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ServicesGo.Business_Layer.Controllers.ControladorasAdministrador;
 using ServicesGo.Models;
 using ServicesGo.Persistence_Layer;
 
@@ -19,7 +20,7 @@ namespace ServicesGo.Controllers
         public ActionResult Index()
         {
             //return View(db.Personas.ToList());
-            ControladoraMostrarAdministradores servicioMostrarAdministradores = new ControladoraMostrarAdministradores();
+            ControladorMostrarAdministradores servicioMostrarAdministradores = new ControladorMostrarAdministradores();
             return View(servicioMostrarAdministradores.mostrarAdministradores());
         }
 
@@ -31,7 +32,7 @@ namespace ServicesGo.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Administrador administrador = (Administrador)db.Personas.Find(id);
-            ControladoraMostrarAdministrador servicioMostrarAdministrador = new ControladoraMostrarAdministrador();
+            ControladorMostrarAdministrador servicioMostrarAdministrador = new ControladorMostrarAdministrador();
             Administrador administrador = servicioMostrarAdministrador.mostrarAdministrador(id);
             if (administrador == null)
             {
@@ -120,7 +121,7 @@ namespace ServicesGo.Controllers
         // POST: Administradores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(int id)
         {
             /*
             Administrador administrador = (Administrador) db.Personas.Find(id);

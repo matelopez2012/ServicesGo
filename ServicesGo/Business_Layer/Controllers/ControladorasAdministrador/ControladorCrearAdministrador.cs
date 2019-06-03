@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Controllers.BussinesLayer.ControladorasAdministrador
+namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
 {
-    public static class ControladorCrearAdministrador
+    public class ControladorCrearAdministrador
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();

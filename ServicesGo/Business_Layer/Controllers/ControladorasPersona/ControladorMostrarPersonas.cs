@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ServicesGo.Models;
+using ServicesGo.Persistence_Layer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,7 +17,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         public List<Persona> mostrarPersonas()
         {
             //Se  buscan todas las personas
-            List<Persona> personas = db.Persona.ToList();
+            List<Persona> personas = db.Personas.ToList();
 
             //Si la lista de personas es diferente de nulo, retornamos la lista
             if (personas != null)

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using ServicesGo.Business_Layer.Controllers.ControladorasPersona;
 using ServicesGo.Models;
 using ServicesGo.Persistence_Layer;
 
@@ -19,19 +20,19 @@ namespace ServicesGo.Controllers
         public ActionResult Index()
         {
             //return View(db.Personas.ToList());
-            ControladoraMostrarPersonas servicioMostrarPersonas = new ControladoraMostrarPersonas();
+            ControladorMostrarPersonas servicioMostrarPersonas = new ControladorMostrarPersonas();
             return View(servicioMostrarPersonas.mostrarPersonas());
         }
 
         // GET: Personas/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             //Persona persona = db.Personas.Find(id);
-            ControladoraMostrarPersona servicioMostrarPersona = new ControladoraMostrarPersona();
+            ControladorMostrarPersona servicioMostrarPersona = new ControladorMostrarPersona();
             Persona persona = servicioMostrarPersona.mostrarPersona(id);
             if (persona == null)
             {

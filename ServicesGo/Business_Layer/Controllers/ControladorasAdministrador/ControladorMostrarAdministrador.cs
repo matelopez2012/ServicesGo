@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
 {
-    public static class ControladorMostrarAdministrador
+    public class ControladorMostrarAdministrador
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();

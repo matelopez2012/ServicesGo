@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 {
-    public class ControladoraCrearCuenta
+    public class ControladorValidarInicioSesion
     {
         // Instancia del contexto que permitirá mapear la base de datos
         private HomeServicesContext dataBaseMap = new HomeServicesContext();
@@ -23,20 +23,17 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             return consultaCuenta.FirstOrDefault();
         }
 
-        // 
-        public bool CrearCuenta(string nombreUsuario, string contrasena, string rol)
+        // Si la cuenta existe y su contraseña concuerda retorna true
+        public bool ValidarSesion(string nombreCuenta, string contrasena)
         {
-            if (BuscarCuenta(nombreUsuario) == null)
+            var cuenta = BuscarCuenta(nombreCuenta);
+
+            if (cuenta == null || cuenta.Contrasena != contrasena)
             {
-                Cuenta cuenta = new Cuenta(nombreUsuario,contrasena,rol);
-
-                dataBaseMap.Cuentas.Add(cuenta);
-                dataBaseMap.SaveChanges();
-
-                return true;
+                return false;
             }
 
-            return false;
+            return true;
         }
     }
 }

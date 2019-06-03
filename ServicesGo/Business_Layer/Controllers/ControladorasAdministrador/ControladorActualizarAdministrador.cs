@@ -8,7 +8,7 @@ using System.Web;
 
 namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
 {
-    public static class ControladorActualizarAdministrador
+    public class ControladorActualizarAdministrador
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();
@@ -28,7 +28,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             //Obtenemos el administrador cuyo id lo pasamos por párametro
-            Administrador administrador = db.Administrador.Find(id);
+            Administrador administrador = db.Administradores.Find(id);
 
             //Modificamos los atributos del administrador con los parámetros que obtenemos
             administrador.nombreUsuario = nombreUsuario;
@@ -41,7 +41,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
             administrador.foto = foto;
 
             //Añadimos el administrador con los nuevos atributos
-            db.Administrador.Add(administrador);
+            db.Administradores.Add(administrador);
             db.Entry(administrador).State = EntityState.Modified;
 
             //Guardamos los cambios

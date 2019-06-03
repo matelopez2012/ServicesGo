@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Controllers.BussinesLayer.ControladorasPersona
+namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
 {
-    public static class ControladorCrearPersona
+    public class ControladorCrearPersona
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
         private static HomeServicesContext db = new HomeServicesContext();
@@ -49,7 +49,7 @@ namespace ServicesGo.Controllers.BussinesLayer.ControladorasPersona
         //Return : retorna true si creó a la persona
         public Boolean agregarPersona(Persona persona)
         {
-            return crearPersona(persona.id, persona.nombreUsuario, persona.nombre, persona.apellidos, 
+            return crearPersona(persona.nombreUsuario, persona.nombre, persona.apellidos, 
                 persona.cedula, persona.direccion, persona.telefono, persona.correoElectronico, persona.foto);
         }
     }

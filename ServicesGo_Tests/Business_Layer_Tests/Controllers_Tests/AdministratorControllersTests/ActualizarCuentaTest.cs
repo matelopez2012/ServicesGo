@@ -8,7 +8,7 @@ namespace ServicesGo_Tests.BusinessLayerTests.ControllersTests.AdministratorCont
 {
     class ActualizarCuentaTest
     {
-        ControladoraActualizarCuenta controladora = new ControladoraActualizarCuenta();
+        ControladorActualizarCuenta controladora = new ControladorActualizarCuenta();
 
         [SetUp]
         public void Setup()
