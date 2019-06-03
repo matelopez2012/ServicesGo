@@ -47,7 +47,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombreDoc,ruta,TimeStamp")] Documento documento)
+        public ActionResult Create([Bind(Include = "Id,nombreDoc,ruta,TimeStamp")] Documento documento)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombreDoc,ruta,TimeStamp")] Documento documento)
+        public ActionResult Edit([Bind(Include = "Id,nombreDoc,ruta,TimeStamp")] Documento documento)
         {
             if (ModelState.IsValid)
             {

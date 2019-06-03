@@ -15,7 +15,6 @@
   <Import Project="..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props" Condition="Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props" Condition="Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" />
-  <Import Project="..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props" Condition="Exists('..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props')" />
   <Import Project="..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props" Condition="Exists('..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" />
   <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
@@ -79,12 +78,6 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Novacta.Documentation.CodeExamples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Novacta.Documentation.CodeExamples.1.0.0\lib\netstandard2.0\Novacta.Documentation.CodeExamples.dll</HintPath>
-    </Reference>
-    <Reference Include="Novacta.Documentation.CodeExamples, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Novacta.Documentation.CodeExamples.1.0.0\lib\netstandard2.0\Novacta.Documentation.CodeExamples.dll</HintPath>
-    </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
@@ -200,11 +193,11 @@
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorCrearCuenta.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorValidarInicioSesion.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasCuenta\ControladorRecuperarContrasena.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorActualizarDocumento.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorCrearDocumento.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorEliminarDocumento.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorMostrarDocumento.cs" />
-    <Compile Include="Business_Layer\Controllers\controladorasDocumento\ControladorMostrarDocumentos.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasDocumento\ControladorActualizarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasDocumento\ControladorCrearDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasDocumento\ControladorEliminarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasDocumento\ControladorMostrarDocumento.cs" />
+    <Compile Include="Business_Layer\Controllers\ControladorasDocumento\ControladorMostrarDocumentos.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorCrearEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorEliminarEmpleado.cs" />
     <Compile Include="Business_Layer\Controllers\ControladorasEmpleado\ControladorVerEmpleado.cs" />
@@ -408,8 +401,6 @@
     <Analyzer Include="..\packages\Microsoft.NetCore.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetCore.CSharp.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
-    <Analyzer Include="..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\analyzers\dotnet\cs\Roslyn.Diagnostics.Analyzers.dll" />
-    <Analyzer Include="..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\analyzers\dotnet\cs\Roslyn.Diagnostics.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
@@ -425,7 +416,6 @@
     <Analyzer Include="..\packages\SonarAnalyzer.CSharp.7.14.0.8411\analyzers\SonarAnalyzer.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Analyzer Include="..\packages\Documentation.Analyser.1.1.1\analyzers\dotnet\cs\Documentation.Analyser.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\analyzers\dotnet\Microsoft.CodeAnalysis.VersionCheckAnalyzer.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Humanizer.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\analyzers\dotnet\cs\Microsoft.CodeQuality.Analyzers.dll" />
@@ -474,7 +464,6 @@
     <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.BannedApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.BannedApiAnalyzers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.PublicApiAnalyzers.2.9.2\build\Microsoft.CodeAnalysis.PublicApiAnalyzers.props'))" />
-    <Error Condition="!Exists('..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Roslyn.Diagnostics.Analyzers.2.9.2\build\Roslyn.Diagnostics.Analyzers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeAnalysis.VersionCheckAnalyzer.2.9.2\build\Microsoft.CodeAnalysis.VersionCheckAnalyzer.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeQuality.Analyzers.2.9.2\build\Microsoft.CodeQuality.Analyzers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.NetCore.Analyzers.2.9.2\build\Microsoft.NetCore.Analyzers.props'))" />

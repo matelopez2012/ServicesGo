@@ -47,7 +47,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombreProfesion,experiencia,conocimientos")] Profesion profesion)
+        public ActionResult Create([Bind(Include = "Id,nombreProfesion,Experiencia,conocimientos")] Profesion profesion)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombreProfesion,experiencia,conocimientos")] Profesion profesion)
+        public ActionResult Edit([Bind(Include = "Id,nombreProfesion,Experiencia,conocimientos")] Profesion profesion)
         {
             if (ModelState.IsValid)
             {

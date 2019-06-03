@@ -15,24 +15,22 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
         private HomeServicesContext db = new HomeServicesContext();
 
         //Metodo que recibe como parametro el id del objeto, el nuevo nombre, la experiencia y los nuevos conocimientos específicos
-        public void actualizarHabilidad(int id, HabilidadDefinida habilidad_id, int experiencia, string conocimientosEpecificos)
+        public void ActualizarHabilidad(int idHabilidad, int idHabilidadDefinida, int experiencia, string conocimientosEpecificos)
         {
-
-            //Búscamos el objeto cuto id es el que recibimos por parametro
-            Habilidad habilidad = db.Habilidades.Find(id);
+            //Búscamos el objeto cuyo id es el que recibimos por parametro
+            var habilidad = db.Habilidades.Find(idHabilidad);
+            var habilidadDefinida = db.HabilidadesDefinidas.Find(idHabilidadDefinida);
 
             //Asignamos al objeto creado, los nuevos atributos
-            habilidad.habilidad_id = habilidad_id;
-            habilidad.experiencia = experiencia;
-            habilidad.conocimientosEspecificos = conocimientosEpecificos;
+            habilidad.HabilidadDefinidaRef = habilidadDefinida;
+            habilidad.Experiencia = experiencia;
+            habilidad.ConocimientosEspecificos = conocimientosEpecificos;
 
             //Añadimos el nuevo objeto a la tabla habilidades
             db.Habilidades.Add(habilidad);
             db.Entry(habilidad).State = EntityState.Modified;
             //Guardamos los cambios
             db.SaveChanges();
-           
-     
         }
         
     }

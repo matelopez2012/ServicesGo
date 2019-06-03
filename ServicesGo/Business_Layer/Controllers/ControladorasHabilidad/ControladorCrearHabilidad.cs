@@ -11,20 +11,19 @@ namespace ServicesGo.Controllers.BussinesLayer.ControladorasHabilidad
     public class ControladorCrearHabilidad
     {
         //Creamos la instancia de HomeServicesContext que permitirá mapear la base de datos
-        private HomeServicesContext db = new HomeServicesContext();
-
+        private HomeServicesContext dataBaseMap = new HomeServicesContext();
 
         //Metodo para crear una habilidad, recibe todos los atributos de la hábilidad a crear
-        
-        public void crearHabilidad(int id_ps, HabilidadDefinida nombre, int experiencia, string conocimientosEpecificos)
+        public void CrearHabilidad(int idHabilidadDefinida, int experiencia, string conocimientosEpecificos, int idPrestadorServicio)
         {
+            var habilidadDefinida = dataBaseMap.HabilidadesDefinidas.Find(idHabilidadDefinida);
+            var prestadorServicio = dataBaseMap.PrestadoresServicios.Find(idPrestadorServicio);
+
             //Añade un nuevo objeto a la tabla Habilidades
-            db.Habilidades.Add(new Habilidad { habilidad_id = nombre, experiencia = experiencia, conocimientosEspecificos = conocimientosEpecificos});
+            dataBaseMap.Habilidades.Add(new Habilidad(habilidadDefinida,experiencia,conocimientosEpecificos,prestadorServicio));
             //Guardamos los cambios
-            db.SaveChanges();
-            //retornamos true si los cambios fueron exítosos 
-
-
+            dataBaseMap.SaveChanges();
+            //retornamos true si los cambios fueron exítosos
         }
 
     }

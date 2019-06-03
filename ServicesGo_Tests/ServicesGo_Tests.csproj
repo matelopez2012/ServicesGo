@@ -16,8 +16,4 @@
     <ProjectReference Include="..\ServicesGo\ServicesGo.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Business_Layer_Tests\Controllers_Tests\ControladorasHabilidad_Tests\" />
-  </ItemGroup>
-
 </Project>

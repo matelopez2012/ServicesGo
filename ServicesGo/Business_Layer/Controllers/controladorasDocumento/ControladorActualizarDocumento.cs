@@ -6,7 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Business_Layer.Controllers.controladorasDocumento
+namespace ServicesGo.Business_Layer.Controllers.ControladorasDocumento
 {
     //Servicio para actualizar documento
     public class ControladoraActualizarDocumento

@@ -11,41 +11,40 @@ namespace ServicesGo.Models
     [Table("Habilidades")]
     public class Habilidad
     {
-        
-        
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
 
         [Required]
-        [StringLength(50)]
-        public HabilidadDefinida habilidad_id { get; set; }
+        [ForeignKey("HabilidadDefinidaRef")]
+        public HabilidadDefinida HabilidadDefinidaRef { get; set; }
+
         [Required]
-        //[MaxLength(1), MinLength(5)]
-        public int experiencia { get; set; }
+        [Range(0,100)]
+        public int Experiencia { get; set; }
+
         [Required]
         [StringLength(300)]
-        public string conocimientosEspecificos { get; set; }
+        public string ConocimientosEspecificos { get; set; }
 
-       // [ForeignKey("Document")]
-        public ICollection<Documento> documentosSoporte { get; set; }
+        public PrestadorServicios PrestadorServiciosRef { get; set; }
 
-        public PrestadorServicios prestadorservicios_id { get; set; }
+        public ICollection<Documento> DocumentosSoporte { get; set; }
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
 
-       
 
         public Habilidad()
         {
 
         }
 
-        public Habilidad(string nombre, int experiencia, string conocimientosEpecificos)
+        public Habilidad(HabilidadDefinida HabilidadDefinidaRef, int Experiencia, string ConocimientosEspecificos, PrestadorServicios PrestadorServiciosRef)
         {
-            nombre = nombre;
-            experiencia = experiencia;
-            conocimientosEspecificos = conocimientosEspecificos;
+            this.HabilidadDefinidaRef = HabilidadDefinidaRef;
+            this.Experiencia = Experiencia;
+            this.ConocimientosEspecificos = ConocimientosEspecificos;
+            this.PrestadorServiciosRef = PrestadorServiciosRef;
         }
 
         public void añadirDocumentoSoporte(string nombreDocumento, string ruta)
@@ -56,18 +55,17 @@ namespace ServicesGo.Models
 
         public Documento buscarDocumento(String nombre)
         {
-            List < Documento > doc = documentosSoporte.ToList();
+            List < Documento > doc = DocumentosSoporte.ToList();
 
             Documento documento = doc.Find(x => x.nombreDoc.Contains(nombre));
 
             return documento != null ? documento : null;
-
         }
 
 
         public void añadirDocumento(string nombreDoc, string ruta)
         {
-            documentosSoporte.Add(new Documento(nombreDoc, ruta));
+            DocumentosSoporte.Add(new Documento(nombreDoc, ruta));
         }
 
 

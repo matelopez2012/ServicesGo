@@ -47,7 +47,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nombreCuenta,auditor,observacion,fechaMod,resuelta")] Peticion peticion)
+        public ActionResult Create([Bind(Include = "Id,nombreCuenta,auditor,observacion,fechaMod,resuelta")] Peticion peticion)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nombreCuenta,auditor,observacion,fechaMod,resuelta")] Peticion peticion)
+        public ActionResult Edit([Bind(Include = "Id,nombreCuenta,auditor,observacion,fechaMod,resuelta")] Peticion peticion)
         {
             if (ModelState.IsValid)
             {
