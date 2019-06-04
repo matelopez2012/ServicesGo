@@ -1,5 +1,4 @@
 ﻿using ServicesGo.Business_Layer.Models;
-using ServicesGo.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

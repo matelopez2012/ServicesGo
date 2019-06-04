@@ -27,7 +27,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         public Boolean actualizarPersona(int id, string nombreUsuario, string nombre, string apellidos, 
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
             {
-                //Búscamos a la persona cuyo id es el que recibimos por parámetro
+                //Buscamos el objeto en el ORM cuyo id es el que obtenemos por parámetro
                 Persona persona = db.Personas.Find(id);
 
                 //Asignamos los nuevos atributos a la persona creada
@@ -40,11 +40,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
                 persona.correoElectronico = correoElectronico;
                 persona.foto = foto;
                 
-                //Añadimos el nuevo objeto a la tabla habilidades
+                //Añadimos la instancia persona con los nuevos atributos al ORM
+                //reemplazando a la instancia de la persona original
                 db.Personas.Add(persona);
+                //Comprobamos si existe alguna modificación de los atributos 
                 db.Entry(persona).State = EntityState.Modified;
                 
-                //Guardamos los cambios
+                //Guardamos los cambios en el ORM, quedando así actualizado
                 db.SaveChanges();
 
                 //Retornamos true para indicar que el objeto se actualizó correctamente
