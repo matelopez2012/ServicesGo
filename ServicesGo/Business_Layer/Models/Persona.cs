@@ -50,7 +50,7 @@ namespace ServicesGo.Models
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
-
+        //Contructor de Persona, recibe los parametros de la nueva persona a instanciar
         public Persona(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             this.nombreUsuario = nombreUsuario;
