@@ -22,19 +22,19 @@ namespace ServicesGo_Tests.Business_Layer_Tests.Controllers_Tests.ControladorasP
         }
 
         [TestCase("xxxxx")]
-        public void cambiarEstadoCuenta(string nombreUsuario)
+        public void Nombre_Usuario_No_Existe(string nombreUsuario)
         {
             controladora.cambiarEstadoCuenta(nombreUsuario);
         }
 
         [TestCase("")]
-        public void cambiarEstadoCuenta(string nombreUsuario)
+        public void Tipo_De_Dato_Incorrecto(string nombreUsuario)
         {
             controladora.cambiarEstadoCuenta(nombreUsuario);
         }
 
         [TestCase("MateLopez")]
-        public void cambiarEstadoCuenta(string nombreUsuario)
+        public void Estado_De_Cuenta_Ya_Aprobado(string nombreUsuario)
         {
             controladora.cambiarEstadoCuenta(nombreUsuario);
         }
