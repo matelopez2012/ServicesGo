@@ -1,4 +1,4 @@
-﻿
+﻿using ServicesGo.Business_Layer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace ServicesGo
     {
         static void Main(string[] args)
         {
-            Models.Empleado admin = new Models.Empleado("matelopez2012", "Mateo", "López", "1053857801", "Cll 47 # 13-13", "88888888", "matelopez2012@gmail.com", "foto.jpg");
+            Empleado admin = new Empleado("matelopez2012", "Mateo", "López", "1053857801", "Cll 47 # 13-13", "88888888", "matelopez2012@gmail.com", "foto.jpg");
             Console.WriteLine(admin.nombreUsuario);
         }
     }

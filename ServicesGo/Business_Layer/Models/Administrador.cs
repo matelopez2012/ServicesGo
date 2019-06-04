@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 
 
-namespace ServicesGo.Models
+namespace ServicesGo.Business_Layer.Models
 {
     [Table ("Administradores")]
     public class Administrador : Persona

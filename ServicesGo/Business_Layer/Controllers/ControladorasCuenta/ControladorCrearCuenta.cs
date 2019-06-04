@@ -1,4 +1,4 @@
-﻿using ServicesGo.Models;
+﻿using ServicesGo.Business_Layer.Models;
 using ServicesGo.Persistence_Layer;
 using System;
 using System.Collections.Generic;
@@ -10,13 +10,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
     public class ControladorCrearCuenta
     {
         // Instancia del contexto que permitirá mapear la base de datos
-        private HomeServicesContext dataBaseMap = new HomeServicesContext();
+        private HomeServicesContext DataBaseMap = new HomeServicesContext();
 
         // Consulta si existe la cuenta en la base de datos y la retorna
         // null en caso de no existir
         public Cuenta BuscarCuenta(string nombreUsuario)
         {
-            var consultaCuenta = from st in dataBaseMap.Cuentas
+            var consultaCuenta = from st in DataBaseMap.Cuentas
                                  where st.NombreUsuario == nombreUsuario
                                  select st;
 
@@ -30,8 +30,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             {
                 Cuenta cuenta = new Cuenta(nombreUsuario,contrasena,rol);
 
-                dataBaseMap.Cuentas.Add(cuenta);
-                dataBaseMap.SaveChanges();
+                DataBaseMap.Cuentas.Add(cuenta);
+                DataBaseMap.SaveChanges();
 
                 return true;
             }

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace ServicesGo.Models
+namespace ServicesGo.Business_Layer.Models
 {
     [Table("Habilidades")]
     public class Habilidad

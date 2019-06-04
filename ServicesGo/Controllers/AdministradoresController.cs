@@ -52,7 +52,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto")] Administrador administrador)
+        public ActionResult Create([Bind(Include = "cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto")] Administrador administrador)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +88,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cedula,nombreUsuario,nombre,apellidos,direccion,telefono,correoElectronico,foto")] Administrador administrador)
+        public ActionResult Edit([Bind(Include = "cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto")] Administrador administrador)
         {
             if (ModelState.IsValid)
             {
