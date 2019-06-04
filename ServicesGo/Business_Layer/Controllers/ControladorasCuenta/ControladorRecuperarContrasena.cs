@@ -1,4 +1,4 @@
-﻿using ServicesGo.Models;
+﻿using ServicesGo.Business_Layer.Models;
 using ServicesGo.Persistence_Layer;
 using System;
 using System.Collections.Generic;
@@ -12,13 +12,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
     public class ControladorRecuperarContrasena
     {
         // Instancia del contexto que permitirá mapear la base de datos
-        private HomeServicesContext dataBaseMap = new HomeServicesContext();
+        private HomeServicesContext DataBaseMap = new HomeServicesContext();
 
         // Consulta si existe la cuenta en la base de datos y la retorna
         // null en caso de no existir
         public Cuenta BuscarCuenta(string nombreUsuario)
         {
-            var consultaCuenta = from st in dataBaseMap.Cuentas
+            var consultaCuenta = from st in DataBaseMap.Cuentas
                                  where st.NombreUsuario == nombreUsuario
                                  select st;
 
@@ -33,7 +33,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
             {
                 Cuenta cuenta = BuscarCuenta(nombreUsuario);
                 cuenta.Contrasena = contrasenaNueva;
-                dataBaseMap.SaveChanges();
+                DataBaseMap.SaveChanges();
 
                 return true;
             }
@@ -64,7 +64,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 
         public void EnviarCorreo(string nombreUsuario, string correo)
         {
-            var query = from st in dataBaseMap.Personas
+            var query = from st in DataBaseMap.Personas
                         where st.correoElectronico == correo
                         select st;
 
@@ -94,7 +94,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
 
                         cuenta.Token = token;
 
-                        dataBaseMap.SaveChanges();
+                        DataBaseMap.SaveChanges();
 
                         message.Body = "<h1>Recuperar contraseña</h1><br/><p>Su token es " + token + "<p/>";
                         message.To.Add(correo);
