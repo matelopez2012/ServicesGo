@@ -4,7 +4,7 @@ using System.Text;
 using NUnit.Framework;
 using ServicesGo.Business_Layer.Controllers.ControladorasCuenta;
 
-namespace ServicesGo_Tests.BusinessLayerTests.ControllersTests.AdministratorControllersTests
+namespace ServicesGo_Tests.Business_Layer_Tests.Controllers_Tests.AdministratorControllers_Tests
 {
     class ActualizarCuentaTest
     {
