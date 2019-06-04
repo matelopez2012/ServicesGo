@@ -47,7 +47,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp,estiloPresentacion,formatoHV,modificado,fechaModificacion")] PrestadorServicios prestadorServicios)
+        public ActionResult Create([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp,EstiloPresentacion,FormatoHV,PerfilModificado,FechaModificacion")] PrestadorServicios prestadorServicios)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp,estiloPresentacion,formatoHV,modificado,fechaModificacion")] PrestadorServicios prestadorServicios)
+        public ActionResult Edit([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp,EstiloPresentacion,FormatoHV,PerfilModificado,FechaModificacion")] PrestadorServicios prestadorServicios)
         {
             if (ModelState.IsValid)
             {

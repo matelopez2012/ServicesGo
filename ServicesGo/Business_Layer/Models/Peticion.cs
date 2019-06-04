@@ -14,29 +14,27 @@ namespace ServicesGo.Business_Layer.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(25)]
-        public string nombreCuenta { get; set; }
+        public Cuenta CuentaRef { get; set; }
 
         [Required]
-        [MaxLength(25)]
-        public string auditor { get; set; }
+        public Empleado EmpleadoRef { get; set; }
 
         [Required]
         [MaxLength(300)]
-        public string observacion { get; set; }
+        public string Observacion { get; set; }
 
         [Required]
-        public DateTime fechaMod { get; set; }
+        public DateTime FechaMod { get; set; }
 
         [Required]
-        public bool resuelta { get; set; }
+        public bool Resuelta { get; set; }
 
-        public Peticion(string nombreCuenta, string auditor, string observacion)
+        public Peticion(Cuenta cuentaRef, Empleado empleadoRef, string observacion)
         {
-            this.nombreCuenta = nombreCuenta;
-            this.auditor = auditor;
-            this.observacion = observacion;
-            this.fechaMod = DateTime.Today;
+            CuentaRef = cuentaRef;
+            EmpleadoRef = empleadoRef;
+            Observacion = observacion;
+            FechaMod = DateTime.Today;
         }
     }
 }

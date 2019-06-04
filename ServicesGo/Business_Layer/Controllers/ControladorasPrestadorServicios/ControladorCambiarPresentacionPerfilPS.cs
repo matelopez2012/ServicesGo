@@ -18,7 +18,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         {
             PrestadorServicios prestador = buscarPrestadorServicios(cedula);
 
-            prestador.estiloPresentacion = presentacion;
+            prestador.EstiloPresentacion = presentacion;
             db.PrestadoresServicios.Add(prestador);
             db.Entry(prestador).State = EntityState.Modified;
             db.SaveChanges();
