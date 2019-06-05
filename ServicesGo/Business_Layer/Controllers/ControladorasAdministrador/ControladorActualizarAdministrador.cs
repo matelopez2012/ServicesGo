@@ -24,14 +24,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
         //@Param : correoElectronico, nuevo correo electronico del administrador
         //@Param : foto, nueva URL de la foto del administrador
         //@Return : boolean retorna verdadero si actualizo al administrador
-        public Boolean actualizarAdministrador(int id, string nombreUsuario, string nombre, string apellidos,
+        public Boolean actualizarAdministrador(int id, Cuenta cuentaRef, string nombre, string apellidos,
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             //Obtenemos el administrador cuyo id lo pasamos por párametro
             Administrador administrador = db.Administradores.Find(id);
 
             //Modificamos los atributos del administrador con los parámetros que obtenemos
-            administrador.nombreUsuario = nombreUsuario;
+            administrador.CuentaRef = cuentaRef;
             administrador.nombre = nombre;
             administrador.apellidos = apellidos;
             administrador.cedula = cedula;
@@ -56,7 +56,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
         //Return : retorna true si actualizó al administrador
         public Boolean modificarAdministrador(Administrador administrador)
         {
-            return actualizarAdministrador(administrador.id, administrador.nombreUsuario, administrador.nombre, 
+            return actualizarAdministrador(administrador.id, administrador.CuentaRef, administrador.nombre, 
                 administrador.apellidos, administrador.cedula, administrador.direccion, administrador.telefono,
                 administrador.correoElectronico, administrador.foto);
         }

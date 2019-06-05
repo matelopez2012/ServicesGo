@@ -27,15 +27,16 @@ namespace ServicesGo.Business_Layer.Models
         public Byte[] TimeStamp { get; set; }
 
 
+        public HabilidadDefinida(int id, string nombre, string descripcion)
+        {
+            Id = id;
+            Nombre = nombre;
+            Descripcion = descripcion;
+        }
+
         public HabilidadDefinida()
         {
 
-        }
-
-        public HabilidadDefinida(string Nombre, string Descripcion)
-        {
-            this.Nombre = Nombre;
-            this.Descripcion = Descripcion;
         }
     }
 }

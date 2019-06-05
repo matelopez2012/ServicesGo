@@ -23,13 +23,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
         //@Param : correoElectronico, correo electronico del administrador
         //@Param : foto, URL de la foto del administrador
         //@Return : boolean retorna verdadero si creó al administrador
-        public Boolean crearAdministrador(int id, string nombreUsuario, string nombre, string apellidos, 
+        public Boolean crearAdministrador(int id, Cuenta cuentaRef, string nombre, string apellidos, 
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             //Añade un nuevo objeto a la tabla Administradores
             db.Administradores.Add(new Administrador
             {
-                nombreUsuario = nombreUsuario,
+                CuentaRef = cuentaRef,
                 nombre = nombre,
                 apellidos = apellidos,
                 cedula = cedula,
@@ -49,7 +49,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
         //Return : retorna true si creó al administrador
         public Boolean agregarAdministrador(Administrador administrador)
         {
-            return crearAdministrador(administrador.id, administrador.nombreUsuario, administrador.nombre,
+            return crearAdministrador(administrador.id, administrador.CuentaRef, administrador.nombre,
                 administrador.apellidos, administrador.cedula, administrador.direccion, administrador.telefono,
                 administrador.correoElectronico, administrador.foto);
         }

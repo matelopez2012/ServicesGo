@@ -13,13 +13,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
         private HomeServicesContext DataBaseMap = new HomeServicesContext();
 
         //Metodo para crear una habilidad, recibe todos los atributos de la hábilidad a crear
-        public void CrearHabilidad(int idHabilidadDefinida, int experiencia, string conocimientosEpecificos, int idPrestadorServicio)
+        public void CrearHabilidad(int idHabilidad, int idHabilidadDefinida, int experiencia, string conocimientosEpecificos, int idPrestadorServicio)
         {
             var habilidadDefinida = DataBaseMap.HabilidadesDefinidas.Find(idHabilidadDefinida);
             var prestadorServicio = DataBaseMap.PrestadoresServicios.Find(idPrestadorServicio);
 
             //Añade un nuevo objeto a la tabla Habilidades
-            DataBaseMap.Habilidades.Add(new Habilidad(habilidadDefinida,experiencia,conocimientosEpecificos,prestadorServicio));
+            DataBaseMap.Habilidades.Add(new Habilidad(idHabilidad, habilidadDefinida,experiencia,conocimientosEpecificos,prestadorServicio));
             //Guardamos los cambios
             DataBaseMap.SaveChanges();
             //retornamos true si los cambios fueron exítosos

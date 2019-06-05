@@ -34,17 +34,18 @@ namespace ServicesGo.Business_Layer.Models
         public Byte[] TimeStamp { get; set; }
 
 
+        public Habilidad(int id, HabilidadDefinida habilidadDefinidaRef, int experiencia, string conocimientosEspecificos, PrestadorServicios prestadorServiciosRef)
+        {
+            Id = id;
+            HabilidadDefinidaRef = habilidadDefinidaRef;
+            Experiencia = experiencia;
+            ConocimientosEspecificos = conocimientosEspecificos;
+            PrestadorServiciosRef = prestadorServiciosRef;
+        }
+
         public Habilidad()
         {
 
-        }
-
-        public Habilidad(HabilidadDefinida HabilidadDefinidaRef, int Experiencia, string ConocimientosEspecificos, PrestadorServicios PrestadorServiciosRef)
-        {
-            this.HabilidadDefinidaRef = HabilidadDefinidaRef;
-            this.Experiencia = Experiencia;
-            this.ConocimientosEspecificos = ConocimientosEspecificos;
-            this.PrestadorServiciosRef = PrestadorServiciosRef;
         }
 
         public void añadirDocumentoSoporte(string nombreDocumento, string ruta)

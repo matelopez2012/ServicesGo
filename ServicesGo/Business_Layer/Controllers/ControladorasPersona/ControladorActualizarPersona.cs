@@ -24,14 +24,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         //@Param : correoElectronico, nuevo correo electronico de la persona
         //@Param : foto, nueva URL de la foto de la persona
         //@Return : boolean retorna verdadero si actualizo a la persona
-        public Boolean actualizarPersona(int id, string nombreUsuario, string nombre, string apellidos, 
+        public Boolean actualizarPersona(int id, Cuenta cuentaRef, string nombre, string apellidos, 
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
             {
                 //Buscamos el objeto en el ORM cuyo id es el que obtenemos por parámetro
                 Persona persona = db.Personas.Find(id);
 
                 //Asignamos los nuevos atributos a la persona creada
-                persona.nombreUsuario = nombreUsuario;
+                persona.CuentaRef = cuentaRef;
                 persona.nombre = nombre;
                 persona.apellidos = apellidos;
                 persona.cedula = cedula;
@@ -58,7 +58,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
             //Return : retorna true si modificó a la persona
             public Boolean modificarPersona(Persona persona)
             {
-                return actualizarPersona(persona.id, persona.nombreUsuario, persona.nombre, persona.apellidos, 
+                return actualizarPersona(persona.id, persona.CuentaRef, persona.nombre, persona.apellidos, 
                     persona.cedula, persona.direccion, persona.telefono, persona.correoElectronico, persona.foto);
             }
         

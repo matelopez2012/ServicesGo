@@ -21,7 +21,7 @@ namespace ServicesGo_Tests.Business_Layer_Tests.Controllers_Tests.ControladorasP
             DataBaseMap.Database.ExecuteSqlCommand("TRUNCATE TABLE Cuentas");
 
             // Agregamos Cuentas a aprobar.    Cuenta(string nombreUsuario, string contrasena, string rol)
-            DataBaseMap.Cuentas.Add(new Cuenta("MateLopez", "abc123", "Prestador de servicio"));
+            DataBaseMap.Cuentas.Add(new Cuenta(1, "MateLopez", "abc123", "Prestador de servicio"));
 
         }
 

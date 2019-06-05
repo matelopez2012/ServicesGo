@@ -14,7 +14,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
         public PrestadorServicios buscarPS(string nombreUsuario)
         {
             var query = from st in db.PrestadoresServicios
-                        where st.nombreUsuario == nombreUsuario
+                        where st.CuentaRef.NombreUsuario == nombreUsuario
                         select st;
 
             return query.FirstOrDefault();
@@ -28,7 +28,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
 
             Peticion peticion = db.Peticiones.Find(idPeticion);
 
-            peticion.resuelta = resuelta;
+            peticion.Resuelta = resuelta;
 
             db.SaveChanges();
         }

@@ -17,7 +17,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasUsuario
 
         //Constructor para el servicio
         //Recibe como parametro los diferentes atributos de la hábilidad que se desean actualizar
-        public static Boolean actualizarHabiliad(int id, string nombreUsuario, string nombre, string apellidos, 
+        public static Boolean actualizarUsuario(int id, Cuenta cuentaRef, string nombre, string apellidos, 
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
 
@@ -25,7 +25,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasUsuario
             Usuario usuario = db.Usuarios.Find(id);
 
             //Modificamos los atributos el usuario con los parámetros que obtenemos
-            usuario.nombreUsuario = nombreUsuario;
+            usuario.CuentaRef = cuentaRef;
             usuario.nombre = nombre;
             usuario.apellidos = apellidos;
             usuario.cedula = cedula;

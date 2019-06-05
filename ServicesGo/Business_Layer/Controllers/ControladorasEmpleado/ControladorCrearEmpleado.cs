@@ -15,13 +15,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
         //Metodo para crear un Empleado, recibe todos los atributos de el empleado a crear
         //El metodo llama los metodos que verifican que no exista una cuenta de usuario o empleado con los datos brindados
         //y crea tanto la cuneta de usuario como el empleado
-        public  void crearEmpleado(string nombreUsuario , string nombre, string apellidos, string cedula, 
+        public  void crearEmpleado(int idCuenta, Cuenta cuentaRef , string nombre, string apellidos, string cedula, 
             string direccion, string telefono, string correoElectrónico, string foto,string clave, string rol, bool estado)
         {
-            if (validarEmpleado(cedula) && validarCuenta(nombreUsuario)) {
+            if (validarEmpleado(cedula) && validarCuenta(cuentaRef.NombreUsuario)) {
 
-                crearCuenta( nombreUsuario,  clave,  rol,  estado);
-                db.Empleados.Add(new Empleado(nombreUsuario,nombre, apellidos,  cedula,  direccion,  telefono,  correoElectrónico,  foto));
+                crearCuenta( idCuenta, cuentaRef.NombreUsuario,  clave,  rol,  estado);
+                db.Empleados.Add(new Empleado(cuentaRef,nombre, apellidos,  cedula,  direccion,  telefono,  correoElectrónico,  foto));
                 db.SaveChanges();
             }
 
@@ -54,8 +54,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasEmpleado
         }
 
         //Metodo para crear una Cuenta, recibe todos los atributos de la Cuenta a crear
-        public void crearCuenta(string nombreUsuario,string clave,string rol,bool estado) {
-            db.Cuentas.Add(new Cuenta(nombreUsuario, clave, rol));
+        public void crearCuenta(int idCuenta, string nombreUsuario,string clave,string rol,bool estado) {
+            db.Cuentas.Add(new Cuenta(idCuenta, nombreUsuario, clave, rol));
             db.SaveChanges();
         }
            

@@ -24,11 +24,11 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
         }
 
         // 
-        public bool CrearCuenta(string nombreUsuario, string contrasena, string rol)
+        public bool CrearCuenta(int idCuenta, string nombreUsuario, string contrasena, string rol)
         {
             if (BuscarCuenta(nombreUsuario) == null)
             {
-                Cuenta cuenta = new Cuenta(nombreUsuario,contrasena,rol);
+                Cuenta cuenta = new Cuenta(idCuenta, nombreUsuario,contrasena,rol);
 
                 DataBaseMap.Cuentas.Add(cuenta);
                 DataBaseMap.SaveChanges();

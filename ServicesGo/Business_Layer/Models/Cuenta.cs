@@ -30,12 +30,15 @@ namespace ServicesGo.Business_Layer.Models
         [MaxLength(32)]
         public string Token { get; set; }
         
-        public Cuenta(string nombreUsuario, string contrasena, string rol)
+        public Cuenta(int id, string nombreUsuario, string contrasena, string rol)
         {
+            Id = id;
             NombreUsuario = nombreUsuario;
             Contrasena = contrasena;
             Rol = rol;
             Verificada = false;
         }
+
+        public Cuenta () { }
     }
 }

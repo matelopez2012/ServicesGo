@@ -16,11 +16,11 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasUsuario
 
         //Constructor para el servicio
         //Recibimos por parámetro los atributos del usuario a crear
-        public static Boolean crearUsuario(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion,
+        public static Boolean crearUsuario(Cuenta cuentaRef, string nombre, string apellidos, string cedula, string direccion,
             string telefono, string correoElectronico, string foto)
         {
             //Creamos un nuevo usuario
-            Usuario usuario = new Usuario(nombreUsuario, nombre, apellidos, cedula, direccion, telefono, correoElectronico, foto);
+            Usuario usuario = new Usuario(cuentaRef, nombre, apellidos, cedula, direccion, telefono, correoElectronico, foto);
 
             //Añadimos el usuario creado
             db.Usuarios.Add(usuario);

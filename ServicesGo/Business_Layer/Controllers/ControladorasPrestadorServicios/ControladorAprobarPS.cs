@@ -16,7 +16,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         //Metodo que busca y retorna las cuentas de PS que estan sin aprobar, en una lista de Cuentas
         public List<Cuenta> consultarCuentasSinAprobar() {
             var cuentasSinAprobar = from a in db.Cuentas
-                      where a.EstaAprobada == false && a.Rol == "PrestadorServicios"
+                      where a.Verificada == false && a.Rol == "PrestadorServicios"
                    select a;
             return (List<Cuenta>) cuentasSinAprobar;
 
@@ -25,7 +25,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
         //Metodo que retorna la cantidad de cuentas de PS que estan sin aprobar
         public  int numeroCuentasSinAprobar() {
             var cuentasSinAprobar = from a in db.Cuentas
-                                    where a.EstaAprobada == false && a.Rol == "PrestadorServicios"
+                                    where a.Verificada == false && a.Rol == "PrestadorServicios"
                                     select a;
 
             return cuentasSinAprobar.ToList().Count();
@@ -41,7 +41,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPrestadorServicios
                        select a;
 
             Cuenta cuenta = c.FirstOrDefault();
-            cuenta.EstaAprobada = true;
+            cuenta.Verificada = true;
             db.Cuentas.Add(cuenta);
             db.Entry(c).State = EntityState.Modified;
             db.SaveChanges();

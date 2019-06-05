@@ -24,14 +24,14 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         //@Param : correoElectronico, correo electronico de la persona
         //@Param : foto, URL de la foto de la persona
         //@Return : boolean retorna verdadero si creó a la persona
-        public Boolean crearPersona(string nombreUsuario, string nombre, string apellidos,
+        public Boolean crearPersona(Cuenta cuentaRef, string nombre, string apellidos,
             string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             //Creamos una nueva instancia de Persona, y se envía por parametro sus atributos
             //Añadimos la instancia de Persona que acabamos de crear al mapeador de clases ORM
             db.Personas.Add(new Persona
             (
-                nombreUsuario,
+                cuentaRef,
                 nombre,
                 apellidos,
                 cedula,
@@ -51,7 +51,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         //Return : retorna true si creó a la persona
         public Boolean agregarPersona(Persona persona)
         {
-            return crearPersona(persona.nombreUsuario, persona.nombre, persona.apellidos, 
+            return crearPersona(persona.CuentaRef, persona.nombre, persona.apellidos, 
                 persona.cedula, persona.direccion, persona.telefono, persona.correoElectronico, persona.foto);
         }
     }

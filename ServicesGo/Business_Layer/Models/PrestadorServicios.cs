@@ -11,9 +11,6 @@ namespace ServicesGo.Business_Layer.Models
     [Table("PrestadoresServicios")]
     public class PrestadorServicios : Persona
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         [Range(0,100)]
         public int EstiloPresentacion { get; set; }
@@ -34,8 +31,8 @@ namespace ServicesGo.Business_Layer.Models
         public Documento SocialSecurity { get; set; }
 
 
-        public PrestadorServicios(Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correo)
-            : base (CuentaRef, nombre, apellidos, cedula, correo)
+        public PrestadorServicios(int id, Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correo)
+            : base (id, CuentaRef, nombre, apellidos, cedula, correo)
         {
             
         }

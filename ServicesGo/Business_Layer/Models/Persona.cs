@@ -63,8 +63,9 @@ namespace ServicesGo.Business_Layer.Models
             this.foto = foto;
         }
 
-        public Persona(Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correoElectronico)
+        public Persona(int id, Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correoElectronico)
         {
+            this.id = id;
             this.CuentaRef = CuentaRef;
             this.nombre = nombre;
             this.apellidos = apellidos;
