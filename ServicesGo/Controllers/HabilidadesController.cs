@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ServicesGo.Business_Layer.Controllers.ControladorasHabilidad;
 using ServicesGo.Business_Layer.Models;
 using ServicesGo.Persistence_Layer;
 
@@ -111,15 +110,9 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            /*
             Habilidad habilidad = db.Habilidades.Find(id);
             db.Habilidades.Remove(habilidad);
             db.SaveChanges();
-            return RedirectToAction("Index");
-        */
-            ControladorEliminarHabilidad ServicioEliminar = new ControladorEliminarHabilidad();
-            ServicioEliminar.eliminarHabilidad(id);
-
             return RedirectToAction("Index");
         }
 

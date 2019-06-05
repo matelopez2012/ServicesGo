@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ServicesGo.Models.Habilidad>
+﻿@model IEnumerable<ServicesGo.Business_Layer.Models.Habilidad>
 
 @{
     ViewBag.Title = "Index";
@@ -12,10 +12,10 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.experiencia)
+            @Html.DisplayNameFor(model => model.Experiencia)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.conocimientosEspecificos)
+            @Html.DisplayNameFor(model => model.ConocimientosEspecificos)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.TimeStamp)
@@ -26,18 +26,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.experiencia)
+            @Html.DisplayFor(modelItem => item.Experiencia)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.conocimientosEspecificos)
+            @Html.DisplayFor(modelItem => item.ConocimientosEspecificos)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.TimeStamp)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>
 }

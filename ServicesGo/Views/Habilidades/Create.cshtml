@@ -1,4 +1,4 @@
-﻿@model ServicesGo.Models.Habilidad
+﻿@model ServicesGo.Business_Layer.Models.Habilidad
 
 @{
     ViewBag.Title = "Create";
@@ -16,18 +16,18 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.experiencia, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Experiencia, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.experiencia, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.experiencia, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Experiencia, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Experiencia, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.conocimientosEspecificos, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ConocimientosEspecificos, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.conocimientosEspecificos, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.conocimientosEspecificos, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.ConocimientosEspecificos, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ConocimientosEspecificos, "", new { @class = "text-danger" })
             </div>
         </div>
 

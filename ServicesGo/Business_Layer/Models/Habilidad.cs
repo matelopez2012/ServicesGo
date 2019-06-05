@@ -15,7 +15,6 @@ namespace ServicesGo.Business_Layer.Models
         public int Id { get; set; }
 
         [Required]
-        [ForeignKey("HabilidadDefinidaRef")]
         public HabilidadDefinida HabilidadDefinidaRef { get; set; }
 
         [Required]
