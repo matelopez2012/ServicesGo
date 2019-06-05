@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ServicesGo.Business_Layer.Models.Administrador">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Business_Layer\Models\Administrador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Cuenta">
+    <Position X="7.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAIAAAAAAAQAAAAAAgAAAIAAAAABAAA=</HashCode>
+      <FileName>Business_Layer\Models\Cuenta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Documento">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <AssociationLine Name="habilidad" Type="ServicesGo.Business_Layer.Models.Habilidad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.5" Y="6.188" />
+        <Point X="3.125" Y="6.188" />
+        <Point X="3.125" Y="12.125" />
+        <Point X="10.75" Y="12.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAIAAAAYAAAAAAAgA=</HashCode>
+      <FileName>Business_Layer\Models\Documento.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="habilidad" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Empleado">
+    <Position X="12.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Business_Layer\Models\Empleado.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Habilidad">
+    <Position X="10.75" Y="10.25" Width="2.75" />
+    <AssociationLine Name="PrestadorServiciosRef" Type="ServicesGo.Business_Layer.Models.PrestadorServicios" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="12.125" Y="10.25" />
+        <Point X="12.125" Y="9.875" />
+        <Point X="16.125" Y="9.875" />
+        <Point X="16.125" Y="8.781" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACCACAAEAABBAAAAAAAAIAEAAAAAAAAEAAAAACAIA=</HashCode>
+      <FileName>Business_Layer\Models\Habilidad.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="PrestadorServiciosRef" />
+      <Property Name="HabilidadDefinidaRef" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.HabilidadDefinida">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAAAAAAAAAAAAAgAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Business_Layer\Models\HabilidadDefinida.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Persona">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAgQAIBCAEAAAAAAAAAAAAAAAAAAAAACAAkI=</HashCode>
+      <FileName>Business_Layer\Models\Persona.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="cuenta" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Peticion">
+    <Position X="18.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAAAAAECAAAAAAAAgAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Business_Layer\Models\Peticion.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.PrestadorServicios">
+    <Position X="15" Y="5.75" Width="2.25" />
+    <AssociationLine Name="arl" Type="ServicesGo.Business_Layer.Models.Documento" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15" Y="7.572" />
+        <Point X="6.083" Y="7.572" Type="JumpStart" />
+        <Point X="5.917" Y="7.572" Type="JumpEnd" />
+        <Point X="5.25" Y="7.572" />
+        <Point X="5.25" Y="7.882" />
+        <Point X="4.75" Y="7.882" />
+        <Point X="4.75" Y="7.632" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.79" Y="0.128" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="habilidades" Type="ServicesGo.Business_Layer.Models.Habilidad" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.062" Y="8.781" />
+        <Point X="17.062" Y="8.889" />
+        <Point X="17.249" Y="8.889" />
+        <Point X="17.249" Y="9.109" />
+        <Point X="17.142" Y="9.109" />
+        <Point X="17.142" Y="11.797" />
+        <Point X="13.5" Y="11.797" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAgQAAAAABAAAACAAgAAAAAAEgAAEAAAAAgA=</HashCode>
+      <FileName>Business_Layer\Models\PrestadorServicios.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="arl" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="habilidades" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Profesion">
+    <Position X="4.75" Y="8.75" Width="2.25" />
+    <AssociationLine Name="certificado" Type="ServicesGo.Business_Layer.Models.Documento" ManuallyRouted="true">
+      <Path>
+        <Point X="4.75" Y="9.816" />
+        <Point X="4.25" Y="9.816" />
+        <Point X="4.25" Y="7.632" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAhAAAAAAAAAAAABAAAAAAAAAgAAgA=</HashCode>
+      <FileName>Business_Layer\Models\Profesion.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="certificado" />
+      <Property Name="tarjetaProfesional" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ServicesGo.Business_Layer.Models.Usuario">
+    <Position X="10.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Business_Layer\Models\Usuario.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
