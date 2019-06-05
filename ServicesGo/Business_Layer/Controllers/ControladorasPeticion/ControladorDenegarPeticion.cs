@@ -24,7 +24,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPeticion
         {
             PrestadorServicios ps = buscarPS(nombreCuenta);
 
-            ps.modificado = resuelta;
+            ps.PerfilModificado = resuelta;
 
             Peticion peticion = db.Peticiones.Find(idPeticion);
 

@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using ServicesGo.Business_Layer.Controllers.ControladorasHabilidad;
-using ServicesGo.Models;
+using ServicesGo.Business_Layer.Models;
 using ServicesGo.Persistence_Layer;
 
 namespace ServicesGo.Controllers

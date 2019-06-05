@@ -25,17 +25,17 @@ namespace ServicesGo.Business_Layer.Models
         [MaxLength(15)]
         public string Rol { get; set; }
 
-        public bool EstaAprobada { get; set; }
+        public bool Verificada { get; set; }
 
         [MaxLength(32)]
         public string Token { get; set; }
         
         public Cuenta(string nombreUsuario, string contrasena, string rol)
         {
-            this.NombreUsuario = nombreUsuario;
-            this.Contrasena = contrasena;
-            this.Rol = rol;
-            this.EstaAprobada = false;
+            NombreUsuario = nombreUsuario;
+            Contrasena = contrasena;
+            Rol = rol;
+            Verificada = false;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using ServicesGo.Persistence_Layer;
+﻿using ServicesGo.Business_Layer.Models;
+using ServicesGo.Persistence_Layer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -13,20 +14,16 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasHabilidad
         private HomeServicesContext DataBaseMap = new HomeServicesContext();
 
         //Metodo que recibe como parametro el id del objeto, el nuevo nombre, la experiencia y los nuevos conocimientos específicos
-        public void ActualizarHabilidad(int idHabilidad, int idHabilidadDefinida, int experiencia, string conocimientosEpecificos)
+        public void ActualizarHabilidad(Habilidad habilidad, HabilidadDefinida habilidadDefinida, int experiencia, string conocimientosEpecificos)
         {
-            //Búscamos el objeto cuyo id es el que recibimos por parametro
-            var habilidad = DataBaseMap.Habilidades.Find(idHabilidad);
-            var habilidadDefinida = DataBaseMap.HabilidadesDefinidas.Find(idHabilidadDefinida);
-
-            //Asignamos al objeto creado, los nuevos atributos
-            habilidad.HabilidadDefinidaRef = habilidadDefinida;
-            habilidad.Experiencia = experiencia;
-            habilidad.ConocimientosEspecificos = conocimientosEpecificos;
+            var habilidadActualizar = DataBaseMap.Habilidades.Find(habilidad.Id);
+            habilidadActualizar.HabilidadDefinidaRef = habilidadDefinida;
+            habilidadActualizar.Experiencia = experiencia;
+            habilidadActualizar.ConocimientosEspecificos = conocimientosEpecificos;
 
             //Añadimos el nuevo objeto a la tabla habilidades
-            DataBaseMap.Habilidades.Add(habilidad);
-            DataBaseMap.Entry(habilidad).State = EntityState.Modified;
+            DataBaseMap.Habilidades.Add(habilidadActualizar);
+            DataBaseMap.Entry(habilidadActualizar).State = EntityState.Modified;
             //Guardamos los cambios
             DataBaseMap.SaveChanges();
         }

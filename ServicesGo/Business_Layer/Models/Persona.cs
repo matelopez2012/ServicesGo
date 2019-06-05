@@ -20,7 +20,7 @@ namespace ServicesGo.Business_Layer.Models
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
-        public string nombreUsuario { get; set; }
+        public Cuenta CuentaRef { get; set; }
 
         [Required(ErrorMessage = "El campo {0} es requerido")]
         [StringLength(25)]
@@ -50,10 +50,10 @@ namespace ServicesGo.Business_Layer.Models
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
-        //Contructor de Persona, recibe los parametros de la nueva persona a instanciar
-        public Persona(string nombreUsuario, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
+
+        public Persona(Cuenta CuentaRef, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
-            this.nombreUsuario = nombreUsuario;
+            this.CuentaRef = CuentaRef;
             this.nombre = nombre;
             this.apellidos = apellidos;
             this.cedula = cedula;
@@ -61,6 +61,15 @@ namespace ServicesGo.Business_Layer.Models
             this.telefono = telefono;
             this.correoElectronico = correoElectronico;
             this.foto = foto;
+        }
+
+        public Persona(Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correoElectronico)
+        {
+            this.CuentaRef = CuentaRef;
+            this.nombre = nombre;
+            this.apellidos = apellidos;
+            this.cedula = cedula;
+            this.correoElectronico = correoElectronico;
         }
 
         public Persona()
