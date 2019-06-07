@@ -47,7 +47,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,nombreUsuario,contrasena,rol,aprobada,token")] Cuenta cuenta)
+        public ActionResult Create([Bind(Include = "Id,NombreUsuario,Contrasena,Rol,Verificada,Token")] Cuenta cuenta)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,nombreUsuario,contrasena,rol,aprobada,token")] Cuenta cuenta)
+        public ActionResult Edit([Bind(Include = "Id,NombreUsuario,Contrasena,Rol,Verificada,Token")] Cuenta cuenta)
         {
             if (ModelState.IsValid)
             {

@@ -32,13 +32,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
 
             //Modificamos los atributos del administrador con los parámetros que obtenemos
             administrador.CuentaRef = cuentaRef;
-            administrador.nombre = nombre;
-            administrador.apellidos = apellidos;
-            administrador.cedula = cedula;
-            administrador.direccion = direccion;
-            administrador.telefono = telefono;
-            administrador.correoElectronico = correoElectronico;
-            administrador.foto = foto;
+            administrador.Nombre = nombre;
+            administrador.Apellidos = apellidos;
+            administrador.Documento = cedula;
+            administrador.Direccion = direccion;
+            administrador.Telefono = telefono;
+            administrador.Correo = correoElectronico;
+            administrador.Foto = foto;
 
             //Añadimos el administrador con los nuevos atributos
             db.Administradores.Add(administrador);
@@ -56,9 +56,9 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
         //Return : retorna true si actualizó al administrador
         public Boolean modificarAdministrador(Administrador administrador)
         {
-            return actualizarAdministrador(administrador.id, administrador.CuentaRef, administrador.nombre, 
-                administrador.apellidos, administrador.cedula, administrador.direccion, administrador.telefono,
-                administrador.correoElectronico, administrador.foto);
+            return actualizarAdministrador(administrador.Id, administrador.CuentaRef, administrador.Nombre, 
+                administrador.Apellidos, administrador.Documento, administrador.Direccion, administrador.Telefono,
+                administrador.Correo, administrador.Foto);
         }
         
     }

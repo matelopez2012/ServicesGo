@@ -6,7 +6,6 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ServicesGo.Business_Layer.Controllers.ControladorasPersona;
 using ServicesGo.Business_Layer.Models;
 using ServicesGo.Persistence_Layer;
 
@@ -19,21 +18,17 @@ namespace ServicesGo.Controllers
         // GET: Personas
         public ActionResult Index()
         {
-            //return View(db.Personas.ToList());
-            ControladorMostrarPersonas servicioMostrarPersonas = new ControladorMostrarPersonas();
-            return View(servicioMostrarPersonas.mostrarPersonas());
+            return View(db.Personas.ToList());
         }
 
         // GET: Personas/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            //Persona persona = db.Personas.Find(id);
-            ControladorMostrarPersona servicioMostrarPersona = new ControladorMostrarPersona();
-            Persona persona = servicioMostrarPersona.mostrarPersona(id);
+            Persona persona = db.Personas.Find(id);
             if (persona == null)
             {
                 return HttpNotFound();
@@ -52,16 +47,12 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Apellidos,Correo,Direccion,Documento,Telefono,Foto,TimeStamp")] Persona persona)
         {
             if (ModelState.IsValid)
             {
-                /*
                 db.Personas.Add(persona);
                 db.SaveChanges();
-                */
-                ControladorCrearPersona servicioCrearPersona = new ControladorCrearPersona();
-                servicioCrearPersona.agregarPersona(persona);
                 return RedirectToAction("Index");
             }
 
@@ -88,16 +79,12 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp")] Persona persona)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Apellidos,Correo,Direccion,Documento,Telefono,Foto,TimeStamp")] Persona persona)
         {
             if (ModelState.IsValid)
             {
-                /*
                 db.Entry(persona).State = EntityState.Modified;
                 db.SaveChanges();
-                */
-                ControladorActualizarPersona servicioActualizarPersona = new ControladorActualizarPersona();
-                servicioActualizarPersona.modificarPersona(persona);
                 return RedirectToAction("Index");
             }
             return View(persona);
@@ -123,13 +110,9 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            /*
             Persona persona = db.Personas.Find(id);
             db.Personas.Remove(persona);
             db.SaveChanges();
-            */
-            ControladorEliminarPersona servicioEliminarPersona = new ControladorEliminarPersona();
-            servicioEliminarPersona.eliminarPersona(id);
             return RedirectToAction("Index");
         }
 

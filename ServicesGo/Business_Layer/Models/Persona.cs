@@ -11,73 +11,65 @@ namespace ServicesGo.Business_Layer.Models
     public class Persona
     {
         [Key]
-        public int id { get; set; }
-        
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
-   
-        public string cedula { get; set; }
+        public int Id { get; set; }
 
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
+        public string Nombre { get; set; }
+
+        [Required]
+        [StringLength(50, MinimumLength = 3)]
+        public string Apellidos { get; set; }
+
+        [Required]
+        [StringLength(80, MinimumLength = 6)]
+        public string Correo { get; set; }
+
+        [Required]
+        [StringLength(150, MinimumLength = 8)]
+        public string Direccion { get; set; }
+
+        [Required]
+        [StringLength(15, MinimumLength = 6)]
+        public string Documento { get; set; }
+
+        [Required]
+        [StringLength(10, MinimumLength = 7)]
+        public string Telefono { get; set; }
+
+        [StringLength(40, MinimumLength = 3)]
+        public string Foto { get; set; }
+
+
         public Cuenta CuentaRef { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(25)]
-        public string nombre { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(50)]
-        public string apellidos { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(35)]
-        public string direccion { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(15)]
-        public string telefono { get; set; }
-
-        [Required(ErrorMessage = "El campo {0} es requerido")]
-        [StringLength(35)]
-        public string correoElectronico { get; set; }
-
-
-        public Cuenta cuenta { get; set; }
-
-
-        public string foto { get; set; }
 
         [Timestamp]
         public Byte[] TimeStamp { get; set; }
 
+
         public Persona(Cuenta CuentaRef, string nombre, string apellidos, string cedula, string direccion, string telefono, string correoElectronico, string foto)
         {
             this.CuentaRef = CuentaRef;
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.cedula = cedula;
-            this.direccion = direccion;
-            this.telefono = telefono;
-            this.correoElectronico = correoElectronico;
-            this.foto = foto;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.Documento = cedula;
+            this.Direccion = direccion;
+            this.Telefono = telefono;
+            this.Correo = correoElectronico;
+            this.Foto = foto;
         }
 
         public Persona(int id, Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correoElectronico)
         {
-            this.id = id;
+            this.Id = id;
             this.CuentaRef = CuentaRef;
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.cedula = cedula;
-            this.correoElectronico = correoElectronico;
+            this.Nombre = nombre;
+            this.Apellidos = apellidos;
+            this.Documento = cedula;
+            this.Correo = correoElectronico;
         }
 
-        public Persona()
-        {
-
-        }
-
+        public Persona() { }
     }
 
 }

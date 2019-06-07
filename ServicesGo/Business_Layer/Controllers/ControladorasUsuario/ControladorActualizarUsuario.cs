@@ -26,13 +26,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasUsuario
 
             //Modificamos los atributos el usuario con los parámetros que obtenemos
             usuario.CuentaRef = cuentaRef;
-            usuario.nombre = nombre;
-            usuario.apellidos = apellidos;
-            usuario.cedula = cedula;
-            usuario.direccion = direccion;
-            usuario.telefono = telefono;
-            usuario.correoElectronico = correoElectronico;
-            usuario.foto = foto;
+            usuario.Nombre = nombre;
+            usuario.Apellidos = apellidos;
+            usuario.Documento = cedula;
+            usuario.Direccion = direccion;
+            usuario.Telefono = telefono;
+            usuario.Correo = correoElectronico;
+            usuario.Foto = foto;
 
             //Añadimos el usuario con los nuevos atributos
             db.Usuarios.Add(usuario);

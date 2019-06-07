@@ -30,13 +30,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
             db.Administradores.Add(new Administrador
             {
                 CuentaRef = cuentaRef,
-                nombre = nombre,
-                apellidos = apellidos,
-                cedula = cedula,
-                direccion = direccion,
-                telefono = telefono,
-                correoElectronico = correoElectronico,
-                foto = foto
+                Nombre = nombre,
+                Apellidos = apellidos,
+                Documento = cedula,
+                Direccion = direccion,
+                Telefono = telefono,
+                Correo = correoElectronico,
+                Foto = foto
             });
             //Guardamos los cambios
             db.SaveChanges();
@@ -49,9 +49,9 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasAdministrador
         //Return : retorna true si creó al administrador
         public Boolean agregarAdministrador(Administrador administrador)
         {
-            return crearAdministrador(administrador.id, administrador.CuentaRef, administrador.nombre,
-                administrador.apellidos, administrador.cedula, administrador.direccion, administrador.telefono,
-                administrador.correoElectronico, administrador.foto);
+            return crearAdministrador(administrador.Id, administrador.CuentaRef, administrador.Nombre,
+                administrador.Apellidos, administrador.Documento, administrador.Direccion, administrador.Telefono,
+                administrador.Correo, administrador.Foto);
         }
 
     }

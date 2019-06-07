@@ -22,7 +22,7 @@ namespace ServicesGo.Business_Layer.Models
         public Habilidad habilidad { get; set; }
 
         [Timestamp]
-        public Byte[] s { get; set; }
+        public Byte[] TimeStamp { get; set; }
 
         public Documento()
         {

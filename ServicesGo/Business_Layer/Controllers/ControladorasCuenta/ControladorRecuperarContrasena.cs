@@ -65,7 +65,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
         public void EnviarCorreo(string nombreUsuario, string correo)
         {
             var query = from st in DataBaseMap.Personas
-                        where st.correoElectronico == correo
+                        where st.Correo == correo
                         select st;
 
             if (query.FirstOrDefault() != null)
@@ -161,7 +161,7 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasCuenta
         public void EnviarCorreo(string nombreUsuario, string correo)
         {
             var query = from st in DataBaseMap.Personas
-                        where st.correoElectronico == correo
+                        where st.Correo == correo
                         select st;
 
             if (query.FirstOrDefault() != null)
