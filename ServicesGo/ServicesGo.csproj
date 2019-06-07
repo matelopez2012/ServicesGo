@@ -333,11 +333,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Documentos\Create.cshtml" />
-    <Content Include="Views\Documentos\Delete.cshtml" />
-    <Content Include="Views\Documentos\Details.cshtml" />
-    <Content Include="Views\Documentos\Edit.cshtml" />
-    <Content Include="Views\Documentos\Index.cshtml" />
     <Content Include="Views\PrestadorServicios\Create.cshtml" />
     <Content Include="Views\PrestadorServicios\Delete.cshtml" />
     <Content Include="Views\PrestadorServicios\Details.cshtml" />
@@ -383,6 +378,11 @@
     <Content Include="Views\Habilidades\Details.cshtml" />
     <Content Include="Views\Habilidades\Edit.cshtml" />
     <Content Include="Views\Habilidades\Index.cshtml" />
+    <Content Include="Views\Documentos\Create.cshtml" />
+    <Content Include="Views\Documentos\Delete.cshtml" />
+    <Content Include="Views\Documentos\Details.cshtml" />
+    <Content Include="Views\Documentos\Edit.cshtml" />
+    <Content Include="Views\Documentos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

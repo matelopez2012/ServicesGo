@@ -12,7 +12,7 @@ namespace ServicesGo.Business_Layer.Models
     public class Habilidad
     {
         [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Required]
         public HabilidadDefinida HabilidadDefinidaRef { get; set; }
@@ -35,7 +35,7 @@ namespace ServicesGo.Business_Layer.Models
 
         public Habilidad(int id, HabilidadDefinida habilidadDefinidaRef, int experiencia, string conocimientosEspecificos, PrestadorServicios prestadorServiciosRef)
         {
-            Id = id;
+            this.id = id;
             HabilidadDefinidaRef = habilidadDefinidaRef;
             Experiencia = experiencia;
             ConocimientosEspecificos = conocimientosEspecificos;

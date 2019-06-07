@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ServicesGo.Models.Documento>
+﻿@model IEnumerable<ServicesGo.Business_Layer.Models.Documento>
 
 @{
     ViewBag.Title = "Index";
@@ -18,7 +18,7 @@
             @Html.DisplayNameFor(model => model.ruta)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TimeStamp)
+            @Html.DisplayNameFor(model => model.s)
         </th>
         <th></th>
     </tr>
@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.ruta)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.TimeStamp)
+            @Html.DisplayFor(modelItem => item.s)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
