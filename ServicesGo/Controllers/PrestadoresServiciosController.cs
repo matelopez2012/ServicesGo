@@ -47,11 +47,17 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp,EstiloPresentacion,FormatoHV,PerfilModificado,FechaModificacion")] PrestadorServicios prestadorServicios)
+        public ActionResult Create([Bind(Include = "Id,Nombre,Apellidos,Correo,Direccion,Documento,Telefono")] PrestadorServicios prestadorServicios)
         {
             if (ModelState.IsValid)
             {
+                prestadorServicios.Foto = "";
+                prestadorServicios.EstiloPresentacion = 1;
+                prestadorServicios.FormatoHV = 1;
+                prestadorServicios.PerfilModificado = false;
+                prestadorServicios.FechaModificacion = DateTime.Now;
                 db.Personas.Add(prestadorServicios);
+                db.Cuentas.Add(prestadorServicios.CuentaRef);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +72,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PrestadorServicios prestadorServicios = (PrestadorServicios)db.Personas.Find(id);
+            PrestadorServicios prestadorServicios = (PrestadorServicios) db.Personas.Find(id);
             if (prestadorServicios == null)
             {
                 return HttpNotFound();
@@ -79,7 +85,7 @@ namespace ServicesGo.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,cedula,nombreUsuario,Nombre,apellidos,direccion,telefono,correoElectronico,foto,TimeStamp,EstiloPresentacion,FormatoHV,PerfilModificado,FechaModificacion")] PrestadorServicios prestadorServicios)
+        public ActionResult Edit([Bind(Include = "Id,Nombre,Apellidos,Correo,Direccion,Documento,Telefono,Foto,TimeStamp,EstiloPresentacion,FormatoHV,PerfilModificado,FechaModificacion")] PrestadorServicios prestadorServicios)
         {
             if (ModelState.IsValid)
             {
@@ -97,7 +103,7 @@ namespace ServicesGo.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            PrestadorServicios prestadorServicios = (PrestadorServicios)db.Personas.Find(id);
+            PrestadorServicios prestadorServicios = (PrestadorServicios) db.Personas.Find(id);
             if (prestadorServicios == null)
             {
                 return HttpNotFound();
@@ -110,7 +116,7 @@ namespace ServicesGo.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            PrestadorServicios prestadorServicios =(PrestadorServicios) db.Personas.Find(id);
+            PrestadorServicios prestadorServicios = (PrestadorServicios) db.Personas.Find(id);
             db.Personas.Remove(prestadorServicios);
             db.SaveChanges();
             return RedirectToAction("Index");

@@ -11,15 +11,6 @@ namespace ServicesGo.Business_Layer.Models
     [Table ("Administradores")]
     public class Administrador : Persona
     {
-
-
-        [Key]
-        public int id { get; set; }
-        //[ForeignKey("Person_Id")]
-        //public Persona persona  {get; set;}
-        //public int PersonaId { get; set; }
-
-        
         //Contructor de Administrador, recibe los parametros del nuevo administrador a instanciar
         public Administrador(Cuenta cuentaRef, string nombre, string apellidos, string cedula, string direccion,
             string telefono, string correoElectronico, string foto)
@@ -29,11 +20,6 @@ namespace ServicesGo.Business_Layer.Models
 
         }
 
-        public Administrador()
-        {
-
-        }
-
-
+        public Administrador() { }
     }
 }

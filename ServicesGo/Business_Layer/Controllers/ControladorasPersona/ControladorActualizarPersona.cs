@@ -32,13 +32,13 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
 
                 //Asignamos los nuevos atributos a la persona creada
                 persona.CuentaRef = cuentaRef;
-                persona.nombre = nombre;
-                persona.apellidos = apellidos;
-                persona.cedula = cedula;
-                persona.direccion = direccion;
-                persona.telefono = telefono;
-                persona.correoElectronico = correoElectronico;
-                persona.foto = foto;
+                persona.Nombre = nombre;
+                persona.Apellidos = apellidos;
+                persona.Documento = cedula;
+                persona.Direccion = direccion;
+                persona.Telefono = telefono;
+                persona.Correo = correoElectronico;
+                persona.Foto = foto;
                 
                 //Añadimos la instancia persona con los nuevos atributos al ORM
                 //reemplazando a la instancia de la persona original
@@ -58,8 +58,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
             //Return : retorna true si modificó a la persona
             public Boolean modificarPersona(Persona persona)
             {
-                return actualizarPersona(persona.id, persona.CuentaRef, persona.nombre, persona.apellidos, 
-                    persona.cedula, persona.direccion, persona.telefono, persona.correoElectronico, persona.foto);
+                return actualizarPersona(persona.Id, persona.CuentaRef, persona.Nombre, persona.Apellidos, 
+                    persona.Documento, persona.Direccion, persona.Telefono, persona.Correo, persona.Foto);
             }
         
     }

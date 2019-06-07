@@ -51,8 +51,8 @@ namespace ServicesGo.Business_Layer.Controllers.ControladorasPersona
         //Return : retorna true si creó a la persona
         public Boolean agregarPersona(Persona persona)
         {
-            return crearPersona(persona.CuentaRef, persona.nombre, persona.apellidos, 
-                persona.cedula, persona.direccion, persona.telefono, persona.correoElectronico, persona.foto);
+            return crearPersona(persona.CuentaRef, persona.Nombre, persona.Apellidos, 
+                persona.Documento, persona.Direccion, persona.Telefono, persona.Correo, persona.Foto);
         }
     }
 }

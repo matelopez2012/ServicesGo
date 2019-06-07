@@ -11,15 +11,12 @@ namespace ServicesGo.Business_Layer.Models
     [Table("PrestadoresServicios")]
     public class PrestadorServicios : Persona
     {
-        [Required]
         [Range(0,100)]
         public int EstiloPresentacion { get; set; }
 
-        [Required]
         [Range(0,100)]
         public int FormatoHV { get; set; }
 
-        [Required]
         public bool PerfilModificado { get; set; }
 
         public DateTime FechaModificacion { get; set; }
@@ -28,7 +25,7 @@ namespace ServicesGo.Business_Layer.Models
 
         public Documento Arl { get; set; }
 
-        public Documento SocialSecurity { get; set; }
+        public Documento SeguridadSocial { get; set; }
 
 
         public PrestadorServicios(int id, Cuenta CuentaRef, string nombre, string apellidos, string cedula, string correo)
@@ -56,22 +53,17 @@ namespace ServicesGo.Business_Layer.Models
 
         }
 
-        public PrestadorServicios()
+        public PrestadorServicios() { }
+
+        public void createArl(string nombreDocArl, string rutaArl)
         {
-
-        }
-
-        public void createArl(string nombreDocArl, string rutaArl) {
             this.Arl = new Documento(nombreDocArl, rutaArl);
         }
 
-        public void createsocialSecurity(string nombreDocSegSocial, string rutaSegSocial) {
-            this.SocialSecurity = new Documento(nombreDocSegSocial, rutaSegSocial);
-
+        public void createsocialSecurity(string nombreDocSegSocial, string rutaSegSocial)
+        {
+            this.SeguridadSocial = new Documento(nombreDocSegSocial, rutaSegSocial);
         }
-
-
-     
     }
 
 }

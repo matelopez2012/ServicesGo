@@ -14,7 +14,7 @@ namespace ServicesGo.Business_Layer.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(25)]
+        [StringLength(25, MinimumLength = 8)]
         public string NombreUsuario { get; set; }
 
         [Required]

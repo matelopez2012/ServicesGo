@@ -1,4 +1,4 @@
-﻿@model ServicesGo.Models.Cuenta
+﻿@model ServicesGo.Business_Layer.Models.Cuenta
 
 @{
     ViewBag.Title = "Details";
@@ -11,48 +11,48 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombreUsuario)
+            @Html.DisplayNameFor(model => model.NombreUsuario)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombreUsuario)
+            @Html.DisplayFor(model => model.NombreUsuario)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.contrasena)
+            @Html.DisplayNameFor(model => model.Contrasena)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.contrasena)
+            @Html.DisplayFor(model => model.Contrasena)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.rol)
+            @Html.DisplayNameFor(model => model.Rol)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.rol)
+            @Html.DisplayFor(model => model.Rol)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.aprobada)
+            @Html.DisplayNameFor(model => model.Verificada)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.aprobada)
+            @Html.DisplayFor(model => model.Verificada)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.token)
+            @Html.DisplayNameFor(model => model.Token)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.token)
+            @Html.DisplayFor(model => model.Token)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
